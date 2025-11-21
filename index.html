@@ -173,7 +173,6 @@
                 const count = Array.isArray(allArticles) ? allArticles.length : 0;
                 debug.innerText = `Loaded: ${latestName} (articles: ${count})`;
 
-                // If the JSON is not an array, treat as no data
                 if (!Array.isArray(allArticles) || count === 0) {
                     container.innerHTML =
                         '<div class="error">No articles available in the latest file.</div>';
@@ -289,12 +288,7 @@
                 return false;
             });
 
-            // For UAP, if nothing matched, fall back to showing all articles
-            if (category === 'UAP' && filtered.length === 0) {
-                renderArticles(allArticles);
-                return;
-            }
-
+            // No fallback: if filtered is empty, user sees the "No articles found" message
             renderArticles(filtered);
         }
 
