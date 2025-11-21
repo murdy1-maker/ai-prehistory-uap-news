@@ -11,24 +11,27 @@ TOPICS = [
     {
         "name": "Artificial Intelligence",
         "file": "ai.json",
-        "query": '"artificial intelligence" OR "AI" OR "machine learning" OR "neural network"'
+        # Short, focused AI query
+        "query": '"artificial intelligence" OR AI OR "machine learning" OR "neural network"'
     },
     {
         "name": "Pre-history",
         "file": "prehistory.json",
-        "query": '"archaeology" OR "prehistoric" OR "paleolithic" OR "neolithic" OR "paleontology"'
+        # Archaeology / prehistory terms
+        "query": "archaeology OR prehistoric OR paleolithic OR neolithic OR paleontology"
     },
     {
         "name": "UAP",
         "file": "uap.json",
-        "query": '"UAP" OR "UFO" OR "unidentified aerial phenomenon" OR "unidentified anomalous phenomenon" OR "alien spacecraft"'
+        # SHORT UAP QUERY (well under 100 characters to avoid 422 UnsupportedQueryLength)
+        "query": "uap OR ufo OR aliens OR \"alien craft\""
     },
 ]
 
 DATA_DIR = "data"
 
 
-def fetch_news(query):
+def fetch_news(query: str):
     """Fetch articles from NewsData.io for a single query."""
     if not API_KEY:
         raise RuntimeError("NEWSDATA_API_KEY not set")
@@ -41,6 +44,7 @@ def fetch_news(query):
 
     res = requests.get(BASE_URL, params=params, timeout=30)
     if res.status_code != 200:
+        # Surface the exact error text from NewsData.io in the logs
         raise RuntimeError(f"NewsData.io error {res.status_code}: {res.text}")
 
     data = res.json()
@@ -60,8 +64,11 @@ def fetch_news(query):
     return normalized
 
 
-def merge_with_existing(path, new_items):
-    """Merge new articles with existing, avoiding duplicates by link, keep latest 300."""
+def merge_with_existing(path: str, new_items: list):
+    """
+    Merge new articles with existing, avoiding duplicates by link,
+    and keep at most 300 items (most recent by pubDate).
+    """
     if os.path.exists(path):
         try:
             with open(path, "r") as f:
@@ -80,8 +87,10 @@ def merge_with_existing(path, new_items):
             existing.append(item)
             seen.add(link)
 
-    # Keep only the 300 most recent by pubDate order (fallback to append order)
+    # Sort by pubDate descending if present; otherwise keep insertion order
     existing.sort(key=lambda x: x.get("pubDate") or "", reverse=True)
+
+    # Keep only the 300 most recent
     return existing[:300]
 
 
@@ -97,8 +106,13 @@ def main():
         query = topic["query"]
 
         print(f"\n=== Fetching {name} ===")
-        articles = fetch_news(query)
-        print(f"Fetched {len(articles)} raw articles for {name}")
+        try:
+            articles = fetch_news(query)
+            print(f"Fetched {len(articles)} raw articles for {name}")
+        except Exception as e:
+            # Log the error but continue with other topics
+            print(f"Error fetching {name}: {e}")
+            continue
 
         out_path = os.path.join(DATA_DIR, filename)
         merged = merge_with_existing(out_path, articles)
