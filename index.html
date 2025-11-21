@@ -37,4 +37,268 @@
             font-weight: bold;
             color: #2c3e50;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            cursor
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+        .filter-btn:active {
+            transform: scale(0.98);
+        }
+        .filter-btn.active {
+            border: 2px solid #007bff;
+            background-color: #eef7ff;
+        }
+        .icon {
+            margin-right: 15px;
+            font-size: 1.5em;
+        }
+        #news-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .article-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .article-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #007bff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .article-meta {
+            font-size: 0.85em;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .article-desc {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+        .loading {
+            color: #666;
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+        .debug-info {
+            font-size: 0.7em;
+            color: #aaa;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AI, Prehistory & UAP News</h1>
+    <div class="subtitle">Updates automatically 4x daily</div>
+
+    <div class="filter-container">
+        <button class="filter-btn" onclick="filterNews('Artificial Intelligence', event)">
+            <span class="icon">🤖</span> Artificial Intelligence
+        </button>
+        <button class="filter-btn" onclick="filterNews('Pre-history', event)">
+            <span class="icon">🏛️</span> Pre-history & Archaeology
+        </button>
+        <button class="filter-btn" onclick="filterNews('UAP', event)">
+            <span class="icon">🛸</span> UAP
+        </button>
+        <button class="filter-btn" onclick="filterNews('All', event)">
+            <span class="icon">📰</span> Show All News
+        </button>
+    </div>
+
+    <div id="news-container"></div>
+    <div id="debug" class="debug-info"></div>
+
+    <script>
+        const REPO_OWNER = 'murdy1-maker';
+        const REPO_NAME = 'ai-prehistory-uap-news';
+        let allArticles = [];
+
+        async function fetchLatestNews() {
+            const container = document.getElementById('news-container');
+            const debug = document.getElementById('debug');
+            container.innerHTML = '<div class="loading">Loading latest news...</div>';
+
+            try {
+                const listUrl =
+                    `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/data`;
+                const listResp = await fetch(listUrl);
+                if (!listResp.ok) {
+                    throw new Error("Could not fetch file list");
+                }
+
+                const files = await listResp.json();
+
+                // Only use timestamped news_*.json files, ignore ai/prehistory/uap.json
+                const jsonFiles = files
+                    .filter(f => f.name.startsWith('news_') && f.name.endsWith('.json'))
+                    .sort((a, b) => b.name.localeCompare(a.name));
+
+                if (jsonFiles.length === 0) {
+                    container.innerHTML =
+                        '<div class="error">No news data found yet. Check back later!</div>';
+                    debug.innerText = 'No news_*.json files found in /data';
+                    return;
+                }
+
+                const latestName = jsonFiles[0].name;
+                const latestFileUrl =
+                    `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/data/${latestName}`;
+
+                const dataResp = await fetch(latestFileUrl);
+                if (!dataResp.ok) {
+                    throw new Error("Could not fetch latest news JSON");
+                }
+
+                allArticles = await dataResp.json();
+
+                const count = Array.isArray(allArticles) ? allArticles.length : 0;
+                debug.innerText = `Loaded: ${latestName} (articles: ${count})`;
+
+                // If the JSON is not an array, treat as no data
+                if (!Array.isArray(allArticles) || count === 0) {
+                    container.innerHTML =
+                        '<div class="error">No articles available in the latest file.</div>';
+                    return;
+                }
+
+                // Automatically show ALL news first
+                filterNews('All', null);
+
+            } catch (err) {
+                console.error(err);
+                const debug = document.getElementById('debug');
+                debug.innerText = `Error: ${err.message}`;
+                container.innerHTML =
+                    `<div class="error">Failed to load news: ${err.message}</div>`;
+            }
+        }
+
+        function renderArticles(articles) {
+            const container = document.getElementById('news-container');
+            container.innerHTML = '';
+
+            if (!articles || articles.length === 0) {
+                container.innerHTML =
+                    '<div class="loading">No articles found matching this category. Try "Show All News".</div>';
+                return;
+            }
+
+            articles.forEach(article => {
+                const card = document.createElement('div');
+                card.className = 'article-card';
+
+                const date = article.pubDate
+                    ? new Date(article.pubDate).toLocaleDateString()
+                    : 'Recent';
+                const source = article.source_id || 'Unknown Source';
+                const desc = article.description
+                    ? article.description
+                    : 'No description available.';
+
+                card.innerHTML = `
+                    <a href="${article.link}" target="_blank" class="article-title">${article.title}</a>
+                    <div class="article-meta">${source} • ${date}</div>
+                    <div class="article-desc">${desc}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterNews(category, evt) {
+            // Clear active state from all buttons
+            document.querySelectorAll('.filter-btn').forEach(btn =>
+                btn.classList.remove('active')
+            );
+
+            // Highlight the clicked button when invoked via click
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add('active');
+            }
+
+            // "Show All News" just shows everything
+            if (category === 'All') {
+                renderArticles(allArticles);
+                return;
+            }
+
+            const filtered = allArticles.filter(article => {
+                const title = (article.title || "").toLowerCase();
+                const desc  = (article.description || "").toLowerCase();
+                const text  = title + " " + desc;
+
+                if (category === 'Artificial Intelligence') {
+                    return (
+                        text.includes('ai') ||
+                        text.includes('artificial intelligence') ||
+                        text.includes('machine learning') ||
+                        text.includes('neural network') ||
+                        text.includes('gpt') ||
+                        text.includes('robot') ||
+                        text.includes('automation') ||
+                        text.includes('tech')
+                    );
+                }
+
+                if (category === 'Pre-history') {
+                    return (
+                        text.includes('archaeology') ||
+                        text.includes('archaeological') ||
+                        text.includes('ancient') ||
+                        text.includes('prehistoric') ||
+                        text.includes('fossil') ||
+                        text.includes('paleo') ||
+                        text.includes('stone age') ||
+                        text.includes('history') ||
+                        text.includes('discovery')
+                    );
+                }
+
+                if (category === 'UAP') {
+                    return (
+                        text.includes('uap') ||
+                        text.includes('ufo') ||
+                        text.includes('unidentified aerial phenomenon') ||
+                        text.includes('unidentified anomalous phenomenon') ||
+                        text.includes('alien') ||
+                        text.includes('extraterrestrial') ||
+                        text.includes('flying saucer') ||
+                        text.includes('space') ||
+                        text.includes('phenomena')
+                    );
+                }
+
+                return false;
+            });
+
+            // For UAP, if nothing matched, fall back to showing all articles
+            if (category === 'UAP' && filtered.length === 0) {
+                renderArticles(allArticles);
+                return;
+            }
+
+            renderArticles(filtered);
+        }
+
+        fetchLatestNews();
+    </script>
+</body>
+</html>
