@@ -6,29 +6,30 @@ from datetime import datetime
 API_KEY = os.environ.get("NEWSDATA_API_KEY")
 BASE_URL = "https://newsdata.io/api/1/news"
 
-# Three separate topic queries so each category has its own feed
+# Three separate topic queries so each category has its own focused feed
 TOPICS = [
     {
         "name": "Artificial Intelligence",
         "file": "ai.json",
-        # Short, focused AI query
-        "query": '"artificial intelligence" OR AI OR "machine learning" OR "neural network"'
+        # Focused AI terms
+        "query": '"artificial intelligence" OR "AI model" OR "machine learning" OR "neural network"'
     },
     {
         "name": "Pre-history",
         "file": "prehistory.json",
-        # Archaeology / prehistory terms
-        "query": "archaeology OR prehistoric OR paleolithic OR neolithic OR paleontology"
+        # Prehistory / archaeology / fossils
+        "query": 'archaeology OR "ancient civilization" OR prehistoric OR fossil OR paleontology'
     },
     {
         "name": "UAP",
         "file": "uap.json",
-        # SHORT UAP QUERY (well under 100 characters to avoid 422 UnsupportedQueryLength)
-        "query": "uap OR ufo OR aliens OR \"alien craft\""
+        # Short UAP query (well under NewsData.io 100‑char q limit)
+        "query": 'uap OR ufo OR "alien craft" OR "alien ship"'
     },
 ]
 
 DATA_DIR = "data"
+MAX_PER_TOPIC = 5  # top N per topic per run
 
 
 def fetch_news(query: str):
@@ -44,7 +45,6 @@ def fetch_news(query: str):
 
     res = requests.get(BASE_URL, params=params, timeout=30)
     if res.status_code != 200:
-        # Surface the exact error text from NewsData.io in the logs
         raise RuntimeError(f"NewsData.io error {res.status_code}: {res.text}")
 
     data = res.json()
@@ -61,37 +61,10 @@ def fetch_news(query: str):
                 "pubDate": item.get("pubDate"),
             }
         )
+
+    # Sort newest first by pubDate if available; API often sends newest first already
+    normalized.sort(key=lambda x: x.get("pubDate") or "", reverse=True)
     return normalized
-
-
-def merge_with_existing(path: str, new_items: list):
-    """
-    Merge new articles with existing, avoiding duplicates by link,
-    and keep at most 300 items (most recent by pubDate).
-    """
-    if os.path.exists(path):
-        try:
-            with open(path, "r") as f:
-                existing = json.load(f)
-                if not isinstance(existing, list):
-                    existing = []
-        except Exception:
-            existing = []
-    else:
-        existing = []
-
-    seen = {item.get("link") for item in existing if isinstance(item, dict)}
-    for item in new_items:
-        link = item.get("link")
-        if link and link not in seen:
-            existing.append(item)
-            seen.add(link)
-
-    # Sort by pubDate descending if present; otherwise keep insertion order
-    existing.sort(key=lambda x: x.get("pubDate") or "", reverse=True)
-
-    # Keep only the 300 most recent
-    return existing[:300]
 
 
 def main():
@@ -99,6 +72,9 @@ def main():
 
     timestamp = datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
     print(f"Running fetch at {timestamp} UTC")
+
+    # Track links globally so the same article is not reused across topics this cycle
+    used_links = set()
 
     for topic in TOPICS:
         name = topic["name"]
@@ -110,23 +86,38 @@ def main():
             articles = fetch_news(query)
             print(f"Fetched {len(articles)} raw articles for {name}")
         except Exception as e:
-            # Log the error but continue with other topics
             print(f"Error fetching {name}: {e}")
+            # Write an empty list so front‑end shows 'no articles' instead of stale data
+            out_path = os.path.join(DATA_DIR, filename)
+            with open(out_path, "w") as f:
+                json.dump([], f, indent=2)
             continue
 
+        topic_articles = []
+        for item in articles:
+            link = item.get("link")
+            if not link:
+                continue
+            if link in used_links:
+                continue
+            used_links.add(link)
+            topic_articles.append(item)
+            if len(topic_articles) >= MAX_PER_TOPIC:
+                break
+
+        print(f"Selected {len(topic_articles)} unique articles for {name}")
+
+        # Overwrite the topic file with just this run's top N for that topic
         out_path = os.path.join(DATA_DIR, filename)
-        merged = merge_with_existing(out_path, articles)
-        print(f"After merge, {len(merged)} total articles for {name}")
-
         with open(out_path, "w") as f:
-            json.dump(merged, f, indent=2)
+            json.dump(topic_articles, f, indent=2)
 
-        # Optional per-topic history file for debugging
+        # Optional per‑topic history file for debugging
         history_name = f"{filename.rstrip('.json')}_{timestamp}.json"
         history_path = os.path.join(DATA_DIR, history_name)
         with open(history_path, "w") as f:
-            json.dump(articles, f, indent=2)
-        print(f"Wrote latest batch ({len(articles)}) to {history_path}")
+            json.dump(topic_articles, f, indent=2)
+        print(f"Wrote {len(topic_articles)} articles to {out_path} and {history_path}")
 
 
 if __name__ == "__main__":
