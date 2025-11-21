@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI, Prehistory & UAP News</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>AI, Prehistory & UAP News</h1>
+  <p class="update-note">Updates automatically 4x daily</p>
+
+  <section id="ai">
+    <h2>🤖 Artificial Intelligence</h2>
+    <ul id="ai-list"></ul>
+  </section>
+
+  <section id="prehistory">
+    <h2>🏛️ Pre-history</h2>
+    <ul id="prehistory-list"></ul>
+  </section>
+
+  <section id="uap">
+    <h2>🛸 UAP / UFO</h2>
+    <ul id="uap-list"></ul>
+  </section>
+
+  <script>
+    async function loadTopic(topic) {
+      try {
+        const res = await fetch(`data/${topic}.json?cb=${Date.now()}`);
+        const items = await res.json();
+        const list = document.getElementById(`${topic}-list`);
+        list.innerHTML = "";
+        
+        // Show newest first
+        [...items].reverse().forEach(item => {
+          const li = document.createElement("li");
+          
+          const link = document.createElement("a");
+          link.href = item.link;
+          link.textContent = item.title || "Untitled";
+          link.target = "_blank";
+          
+          const meta = document.createElement("div");
+          meta.className = "meta";
+          const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString() : "";
+          meta.textContent = `${item.source_id || "Unknown"} ${date ? `• ${date}` : ""}`;
+          
+          li.appendChild(link);
+          if (item.description) {
+            const desc = document.createElement("div");
+            desc.className = "description";
+            desc.textContent = item.description;
+            li.appendChild(desc);
+          }
+          li.appendChild(meta);
+          
+          list.appendChild(li);
+        });
+      } catch (err) {
+        console.error(`Failed to load ${topic}:`, err);
+      }
+    }
+
+    // Load all topics
+    ["ai", "prehistory", "uap"].forEach(topic => loadTopic(topic));
+  </script>
+</body>
+</html>
