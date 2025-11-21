@@ -6,41 +6,44 @@ from datetime import datetime
 API_KEY = os.environ.get("NEWSDATA_API_KEY")
 BASE_URL = "https://newsdata.io/api/1/news"
 
-# Three separate topic queries so each category has its own focused feed
+# Three focused topics. Each will return up to 5 specific articles.
 TOPICS = [
     {
         "name": "Artificial Intelligence",
         "file": "ai.json",
-        # Focused AI terms
-        "query": '"artificial intelligence" OR "AI model" OR "machine learning" OR "neural network"'
+        # Short, title-focused AI query
+        "qintitle": 'AI OR "artificial intelligence" OR "machine learning"'
     },
     {
         "name": "Pre-history",
         "file": "prehistory.json",
-        # Prehistory / archaeology / fossils
-        "query": 'archaeology OR "ancient civilization" OR prehistoric OR fossil OR paleontology'
+        # Title must clearly mention archaeology / fossils / ancient
+        "qintitle": 'archaeology OR fossil OR "ancient" OR paleontology'
     },
     {
         "name": "UAP",
         "file": "uap.json",
-        # Short UAP query (well under NewsData.io 100‑char q limit)
-        "query": 'uap OR ufo OR "alien craft" OR "alien ship"'
+        # Tight UAP query, kept well under length limits
+        "qintitle": 'UAP OR UFO OR "alien craft"'
     },
 ]
 
 DATA_DIR = "data"
-MAX_PER_TOPIC = 5  # top N per topic per run
+MAX_PER_TOPIC = 5  # top N per topic per cycle
 
 
-def fetch_news(query: str):
-    """Fetch articles from NewsData.io for a single query."""
+def fetch_news_for_topic(qintitle: str):
+    """
+    Fetch articles from NewsData.io for a single topic,
+    using qInTitle for higher relevance.
+    """
     if not API_KEY:
         raise RuntimeError("NEWSDATA_API_KEY not set")
 
     params = {
         "apikey": API_KEY,
-        "q": query,
         "language": "en",
+        "qInTitle": qintitle,
     }
 
     res = requests.get(BASE_URL, params=params, timeout=30)
@@ -62,7 +65,7 @@ def fetch_news(query: str):
             }
         )
 
-    # Sort newest first by pubDate if available; API often sends newest first already
+    # Newest first, in case API isn’t already sorted
     normalized.sort(key=lambda x: x.get("pubDate") or "", reverse=True)
     return normalized
 
@@ -73,27 +76,26 @@ def main():
     timestamp = datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
     print(f"Running fetch at {timestamp} UTC")
 
-    # Track links globally so the same article is not reused across topics this cycle
+    # Prevent the same URL showing up in multiple topics this cycle
     used_links = set()
 
     for topic in TOPICS:
         name = topic["name"]
         filename = topic["file"]
-        query = topic["query"]
+        qintitle = topic["qintitle"]
 
         print(f"\n=== Fetching {name} ===")
         try:
-            articles = fetch_news(query)
+            articles = fetch_news_for_topic(qintitle)
             print(f"Fetched {len(articles)} raw articles for {name}")
         except Exception as e:
             print(f"Error fetching {name}: {e}")
-            # Write an empty list so front‑end shows 'no articles' instead of stale data
             out_path = os.path.join(DATA_DIR, filename)
             with open(out_path, "w") as f:
                 json.dump([], f, indent=2)
             continue
 
-        topic_articles = []
+        selected = []
         for item in articles:
             link = item.get("link")
             if not link:
@@ -101,23 +103,24 @@ def main():
             if link in used_links:
                 continue
             used_links.add(link)
-            topic_articles.append(item)
-            if len(topic_articles) >= MAX_PER_TOPIC:
+            selected.append(item)
+            if len(selected) >= MAX_PER_TOPIC:
                 break
 
-        print(f"Selected {len(topic_articles)} unique articles for {name}")
+        print(f"Selected {len(selected)} unique articles for {name}")
 
-        # Overwrite the topic file with just this run's top N for that topic
+        # Overwrite topic file with this run's top N
         out_path = os.path.join(DATA_DIR, filename)
         with open(out_path, "w") as f:
-            json.dump(topic_articles, f, indent=2)
+            json.dump(selected, f, indent=2)
 
-        # Optional per‑topic history file for debugging
+        # Optional per-topic history file (handy for debugging)
         history_name = f"{filename.rstrip('.json')}_{timestamp}.json"
         history_path = os.path.join(DATA_DIR, history_name)
         with open(history_path, "w") as f:
-            json.dump(topic_articles, f, indent=2)
-        print(f"Wrote {len(topic_articles)} articles to {out_path} and {history_path}")
+            json.dump(selected, f, indent=2)
+
+        print(f"Wrote {len(selected)} articles to {out_path} and {history_path}")
 
 
 if __name__ == "__main__":
