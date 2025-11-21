@@ -30,16 +30,16 @@
     <div class="subtitle">Updates automatically 4x daily</div>
 
     <div class="filter-container">
-        <button class="filter-btn" onclick="filterNews('Artificial Intelligence')">
+        <button class="filter-btn" onclick="filterNews('Artificial Intelligence', event)">
             <span class="icon">🤖</span> Artificial Intelligence
         </button>
-        <button class="filter-btn" onclick="filterNews('Pre-history')">
+        <button class="filter-btn" onclick="filterNews('Pre-history', event)">
             <span class="icon">🏛️</span> Pre-history & Archaeology
         </button>
-        <button class="filter-btn" onclick="filterNews('UAP')">
-            <span class="icon">🛸</span> UAP / UFO
+        <button class="filter-btn" onclick="filterNews('UAP', event)">
+            <span class="icon">🛸</span> UAP
         </button>
-        <button class="filter-btn" onclick="filterNews('All')">
+        <button class="filter-btn" onclick="filterNews('All', event)">
             <span class="icon">📰</span> Show All News
         </button>
     </div>
@@ -61,9 +61,13 @@
                 const listUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/data`;
                 const listResp = await fetch(listUrl);
                 if (!listResp.ok) throw new Error("Could not fetch file list");
-                
+
                 const files = await listResp.json();
-                const jsonFiles = files.filter(f => f.name.endsWith('.json')).sort((a, b) => b.name.localeCompare(a.name));
+
+                // Only use timestamped news_*.json files, not ai.json/prehistory.json/uap.json
+                const jsonFiles = files
+                    .filter(f => f.name.startsWith('news_') && f.name.endsWith('.json'))
+                    .sort((a, b) => b.name.localeCompare(a.name));
 
                 if (jsonFiles.length === 0) {
                     container.innerHTML = '<div class="error">No news data found yet. Check back later!</div>';
@@ -72,12 +76,12 @@
 
                 const latestFileUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/data/${jsonFiles[0].name}`;
                 debug.innerText = "Loaded: " + jsonFiles[0].name;
-                
+
                 const dataResp = await fetch(latestFileUrl);
                 allArticles = await dataResp.json();
 
                 // Automatically show ALL news first so you see something immediately
-                filterNews('All');
+                filterNews('All', null);
 
             } catch (err) {
                 console.error(err);
@@ -97,10 +101,9 @@
             articles.forEach(article => {
                 const card = document.createElement('div');
                 card.className = 'article-card';
-                
+
                 const date = article.pubDate ? new Date(article.pubDate).toLocaleDateString() : 'Recent';
                 const source = article.source_id || 'Unknown Source';
-                // Handle case where description is null
                 const desc = article.description ? article.description : 'No description available.';
 
                 card.innerHTML = `
@@ -112,32 +115,32 @@
             });
         }
 
-        function filterNews(category) {
+        function filterNews(category, evt) {
+            // Highlight active button if this came from a click
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            // Find button that matches and activate it (if triggered by click)
-            if (event && event.currentTarget) event.currentTarget.classList.add('active');
-            
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add('active');
+            }
+
             if (category === 'All') {
                 renderArticles(allArticles);
                 return;
             }
 
             const filtered = allArticles.filter(article => {
-                // Combine all text and lower case it for easier matching
                 const title = (article.title || "").toLowerCase();
                 const desc = (article.description || "").toLowerCase();
                 const text = title + " " + desc;
-                
-                // Broad keywords
-                if (category === 'Artificial Intelligence') 
+
+                if (category === 'Artificial Intelligence')
                     return text.includes('ai') || text.includes('intelligence') || text.includes('gpt') || text.includes('robot') || text.includes('tech');
-                
-                if (category === 'Pre-history') 
+
+                if (category === 'Pre-history')
                     return text.includes('archaeology') || text.includes('ancient') || text.includes('fossil') || text.includes('paleo') || text.includes('history') || text.includes('discovery');
-                
-                if (category === 'UAP') 
+
+                if (category === 'UAP')
                     return text.includes('uap') || text.includes('ufo') || text.includes('alien') || text.includes('phenomena') || text.includes('space');
-                
+
                 return false;
             });
 
