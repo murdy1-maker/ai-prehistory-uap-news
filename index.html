@@ -21,6 +21,7 @@
         .article-desc { font-size: 0.95em; color: #555; line-height: 1.5; }
         .loading { color: #666; margin-top: 20px; }
         .error { color: red; margin-top: 20px; }
+        .debug-info { font-size: 0.7em; color: #aaa; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -44,27 +45,24 @@
     </div>
 
     <div id="news-container"></div>
+    <div id="debug" class="debug-info"></div>
 
     <script>
-        // Configuration
         const REPO_OWNER = 'murdy1-maker';
         const REPO_NAME = 'ai-prehistory-uap-news';
-        
         let allArticles = [];
 
         async function fetchLatestNews() {
             const container = document.getElementById('news-container');
+            const debug = document.getElementById('debug');
             container.innerHTML = '<div class="loading">Loading latest news...</div>';
 
             try {
-                // 1. List files in data directory via GitHub API
                 const listUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/data`;
                 const listResp = await fetch(listUrl);
                 if (!listResp.ok) throw new Error("Could not fetch file list");
                 
                 const files = await listResp.json();
-                
-                // 2. Sort to find the newest JSON file (by name since name includes timestamp)
                 const jsonFiles = files.filter(f => f.name.endsWith('.json')).sort((a, b) => b.name.localeCompare(a.name));
 
                 if (jsonFiles.length === 0) {
@@ -72,16 +70,14 @@
                     return;
                 }
 
-                // 3. Fetch the content of the newest file
-                // Use raw.githubusercontent.com to avoid CORS issues with direct API content
                 const latestFileUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/data/${jsonFiles[0].name}`;
-                console.log("Fetching: " + latestFileUrl);
+                debug.innerText = "Loaded: " + jsonFiles[0].name;
                 
                 const dataResp = await fetch(latestFileUrl);
-                const articles = await dataResp.json();
+                allArticles = await dataResp.json();
 
-                allArticles = articles;
-                renderArticles(allArticles);
+                // Automatically show ALL news first so you see something immediately
+                filterNews('All');
 
             } catch (err) {
                 console.error(err);
@@ -93,8 +89,8 @@
             const container = document.getElementById('news-container');
             container.innerHTML = '';
 
-            if (articles.length === 0) {
-                container.innerHTML = '<div class="loading">No articles found for this category.</div>';
+            if (!articles || articles.length === 0) {
+                container.innerHTML = '<div class="loading">No articles found matching this category. Try "Show All News".</div>';
                 return;
             }
 
@@ -104,40 +100,50 @@
                 
                 const date = article.pubDate ? new Date(article.pubDate).toLocaleDateString() : 'Recent';
                 const source = article.source_id || 'Unknown Source';
+                // Handle case where description is null
+                const desc = article.description ? article.description : 'No description available.';
 
                 card.innerHTML = `
                     <a href="${article.link}" target="_blank" class="article-title">${article.title}</a>
                     <div class="article-meta">${source} • ${date}</div>
-                    <div class="article-desc">${article.description || 'No description available.'}</div>
+                    <div class="article-desc">${desc}</div>
                 `;
                 container.appendChild(card);
             });
         }
 
         function filterNews(category) {
-            // Visual update for buttons
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-
+            // Find button that matches and activate it (if triggered by click)
+            if (event && event.currentTarget) event.currentTarget.classList.add('active');
+            
             if (category === 'All') {
                 renderArticles(allArticles);
                 return;
             }
 
-            // Simple keyword filtering
             const filtered = allArticles.filter(article => {
-                const text = (article.title + " " + article.description).toLowerCase();
+                // Combine all text and lower case it for easier matching
+                const title = (article.title || "").toLowerCase();
+                const desc = (article.description || "").toLowerCase();
+                const text = title + " " + desc;
                 
-                if (category === 'Artificial Intelligence') return text.includes('ai') || text.includes('intelligence') || text.includes('gpt') || text.includes('learning');
-                if (category === 'Pre-history') return text.includes('archaeology') || text.includes('ancient') || text.includes('fossil') || text.includes('paleo');
-                if (category === 'UAP') return text.includes('uap') || text.includes('ufo') || text.includes('alien') || text.includes('phenomena');
+                // Broad keywords
+                if (category === 'Artificial Intelligence') 
+                    return text.includes('ai') || text.includes('intelligence') || text.includes('gpt') || text.includes('robot') || text.includes('tech');
+                
+                if (category === 'Pre-history') 
+                    return text.includes('archaeology') || text.includes('ancient') || text.includes('fossil') || text.includes('paleo') || text.includes('history') || text.includes('discovery');
+                
+                if (category === 'UAP') 
+                    return text.includes('uap') || text.includes('ufo') || text.includes('alien') || text.includes('phenomena') || text.includes('space');
+                
                 return false;
             });
 
             renderArticles(filtered);
         }
 
-        // Initialize
         fetchLatestNews();
     </script>
 </body>
