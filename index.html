@@ -1,70 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI, Prehistory & UAP News</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI, Prehistory & UAP News</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; text-align: center; }
+        h1 { color: #333; margin-bottom: 10px; }
+        .subtitle { color: #666; font-size: 0.9em; margin-bottom: 30px; }
+        .filter-container { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto 30px auto; }
+        .filter-btn { background: white; border: none; padding: 20px; border-radius: 12px; font-size: 1.2em; font-weight: bold; color: #2c3e50; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; text-align: left; display: flex; align-items: center; }
+        .filter-btn:active { transform: scale(0.98); }
+        .filter-btn.active { border: 2px solid #007bff; background-color: #eef7ff; }
+        .icon { margin-right: 15px; font-size: 1.5em; }
+        #news-container { max-width: 800px; margin: 0 auto; text-align: left; }
+        .article-card { background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .article-title { font-size: 1.1em; font-weight: bold; color: #007bff; text-decoration: none; display: block; margin-bottom: 8px; }
+        .article-meta { font-size: 0.85em; color: #888; margin-bottom: 10px; }
+        .article-desc { font-size: 0.95em; color: #555; line-height: 1.5; }
+        .loading { color: #666; margin-top: 20px; }
+        .error { color: red; margin-top: 20px; }
+    </style>
 </head>
 <body>
-  <h1>AI, Prehistory & UAP News</h1>
-  <p class="update-note">Updates automatically 4x daily</p>
 
-  <section id="ai">
-    <h2>🤖 Artificial Intelligence</h2>
-    <ul id="ai-list"></ul>
-  </section>
+    <h1>AI, Prehistory & UAP News</h1>
+    <div class="subtitle">Updates automatically 4x daily</div>
 
-  <section id="prehistory">
-    <h2>🏛️ Pre-history</h2>
-    <ul id="prehistory-list"></ul>
-  </section>
+    <div class="filter-container">
+        <button class="filter-btn" onclick="filterNews('Artificial Intelligence')">
+            <span class="icon">🤖</span> Artificial Intelligence
+        </button>
+        <button class="filter-btn" onclick="filterNews('Pre-history')">
+            <span class="icon">🏛️</span> Pre-history & Archaeology
+        </button>
+        <button class="filter-btn" onclick="filterNews('UAP')">
+            <span class="icon">🛸</span> UAP / UFO
+        </button>
+        <button class="filter-btn" onclick="filterNews('All')">
+            <span class="icon">📰</span> Show All News
+        </button>
+    </div>
 
-  <section id="uap">
-    <h2>🛸 UAP / UFO</h2>
-    <ul id="uap-list"></ul>
-  </section>
+    <div id="news-container"></div>
 
-  <script>
-    async function loadTopic(topic) {
-      try {
-        const res = await fetch(`data/${topic}.json?cb=${Date.now()}`);
-        const items = await res.json();
-        const list = document.getElementById(`${topic}-list`);
-        list.innerHTML = "";
+    <script>
+        // Configuration
+        const REPO_OWNER = 'murdy1-maker';
+        const REPO_NAME = 'ai-prehistory-uap-news';
         
-        // Show newest first
-        [...items].reverse().forEach(item => {
-          const li = document.createElement("li");
-          
-          const link = document.createElement("a");
-          link.href = item.link;
-          link.textContent = item.title || "Untitled";
-          link.target = "_blank";
-          
-          const meta = document.createElement("div");
-          meta.className = "meta";
-          const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString() : "";
-          meta.textContent = `${item.source_id || "Unknown"} ${date ? `• ${date}` : ""}`;
-          
-          li.appendChild(link);
-          if (item.description) {
-            const desc = document.createElement("div");
-            desc.className = "description";
-            desc.textContent = item.description;
-            li.appendChild(desc);
-          }
-          li.appendChild(meta);
-          
-          list.appendChild(li);
-        });
-      } catch (err) {
-        console.error(`Failed to load ${topic}:`, err);
-      }
-    }
+        let allArticles = [];
 
-    // Load all topics
-    ["ai", "prehistory", "uap"].forEach(topic => loadTopic(topic));
-  </script>
+        async function fetchLatestNews() {
+            const container = document.getElementById('news-container');
+            container.innerHTML = '<div class="loading">Loading latest news...</div>';
+
+            try {
+                // 1. List files in data directory via GitHub API
+                const listUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/data`;
+                const listResp = await fetch(listUrl);
+                if (!listResp.ok) throw new Error("Could not fetch file list");
+                
+                const files = await listResp.json();
+                
+                // 2. Sort to find the newest JSON file (by name since name includes timestamp)
+                const jsonFiles = files.filter(f => f.name.endsWith('.json')).sort((a, b) => b.name.localeCompare(a.name));
+
+                if (jsonFiles.length === 0) {
+                    container.innerHTML = '<div class="error">No news data found yet. Check back later!</div>';
+                    return;
+                }
+
+                // 3. Fetch the content of the newest file
+                // Use raw.githubusercontent.com to avoid CORS issues with direct API content
+                const latestFileUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/data/${jsonFiles[0].name}`;
+                console.log("Fetching: " + latestFileUrl);
+                
+                const dataResp = await fetch(latestFileUrl);
+                const articles = await dataResp.json();
+
+                allArticles = articles;
+                renderArticles(allArticles);
+
+            } catch (err) {
+                console.error(err);
+                container.innerHTML = `<div class="error">Failed to load news: ${err.message}</div>`;
+            }
+        }
+
+        function renderArticles(articles) {
+            const container = document.getElementById('news-container');
+            container.innerHTML = '';
+
+            if (articles.length === 0) {
+                container.innerHTML = '<div class="loading">No articles found for this category.</div>';
+                return;
+            }
+
+            articles.forEach(article => {
+                const card = document.createElement('div');
+                card.className = 'article-card';
+                
+                const date = article.pubDate ? new Date(article.pubDate).toLocaleDateString() : 'Recent';
+                const source = article.source_id || 'Unknown Source';
+
+                card.innerHTML = `
+                    <a href="${article.link}" target="_blank" class="article-title">${article.title}</a>
+                    <div class="article-meta">${source} • ${date}</div>
+                    <div class="article-desc">${article.description || 'No description available.'}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterNews(category) {
+            // Visual update for buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            if (category === 'All') {
+                renderArticles(allArticles);
+                return;
+            }
+
+            // Simple keyword filtering
+            const filtered = allArticles.filter(article => {
+                const text = (article.title + " " + article.description).toLowerCase();
+                
+                if (category === 'Artificial Intelligence') return text.includes('ai') || text.includes('intelligence') || text.includes('gpt') || text.includes('learning');
+                if (category === 'Pre-history') return text.includes('archaeology') || text.includes('ancient') || text.includes('fossil') || text.includes('paleo');
+                if (category === 'UAP') return text.includes('uap') || text.includes('ufo') || text.includes('alien') || text.includes('phenomena');
+                return false;
+            });
+
+            renderArticles(filtered);
+        }
+
+        // Initialize
+        fetchLatestNews();
+    </script>
 </body>
 </html>
