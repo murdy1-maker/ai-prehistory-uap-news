@@ -110,16 +110,16 @@
     <div class="subtitle">Updates automatically 4x daily</div>
 
     <div class="filter-container">
-        <button class="filter-btn" onclick="filterNews('Artificial Intelligence', event)">
+        <button class="filter-btn" onclick="filterNews('ai', event)">
             <span class="icon">🤖</span> Artificial Intelligence
         </button>
-        <button class="filter-btn" onclick="filterNews('Pre-history', event)">
+        <button class="filter-btn" onclick="filterNews('prehistory', event)">
             <span class="icon">🏛️</span> Pre-history & Archaeology
         </button>
-        <button class="filter-btn" onclick="filterNews('UAP', event)">
+        <button class="filter-btn" onclick="filterNews('uap', event)">
             <span class="icon">🛸</span> UAP
         </button>
-        <button class="filter-btn" onclick="filterNews('All', event)">
+        <button class="filter-btn" onclick="filterNews('all', event)">
             <span class="icon">📰</span> Show All News
         </button>
     </div>
@@ -128,66 +128,52 @@
     <div id="debug" class="debug-info"></div>
 
     <script>
-        const REPO_OWNER = 'murdy1-maker';
-        const REPO_NAME = 'ai-prehistory-uap-news';
+        const dataByKey = {
+            ai: [],
+            prehistory: [],
+            uap: [],
+        };
         let allArticles = [];
 
-        async function fetchLatestNews() {
+        async function loadAllData() {
             const container = document.getElementById('news-container');
             const debug = document.getElementById('debug');
             container.innerHTML = '<div class="loading">Loading latest news...</div>';
 
             try {
-                const listUrl =
-                    `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/data`;
-                const listResp = await fetch(listUrl);
-                if (!listResp.ok) {
-                    throw new Error("Could not fetch file list");
-                }
+                const [aiRes, preRes, uapRes] = await Promise.all([
+                    fetch('data/ai.json').catch(() => null),
+                    fetch('data/prehistory.json').catch(() => null),
+                    fetch('data/uap.json').catch(() => null),
+                ]);
 
-                const files = await listResp.json();
+                const aiJson = aiRes && aiRes.ok ? await aiRes.json() : [];
+                const preJson = preRes && preRes.ok ? await preRes.json() : [];
+                const uapJson = uapRes && uapRes.ok ? await uapRes.json() : [];
 
-                // Only use timestamped news_*.json files, ignore ai/prehistory/uap.json
-                const jsonFiles = files
-                    .filter(f => f.name.startsWith('news_') && f.name.endsWith('.json'))
-                    .sort((a, b) => b.name.localeCompare(a.name));
+                dataByKey.ai = Array.isArray(aiJson) ? aiJson : [];
+                dataByKey.prehistory = Array.isArray(preJson) ? preJson : [];
+                dataByKey.uap = Array.isArray(uapJson) ? uapJson : [];
 
-                if (jsonFiles.length === 0) {
-                    container.innerHTML =
-                        '<div class="error">No news data found yet. Check back later!</div>';
-                    debug.innerText = 'No news_*.json files found in /data';
-                    return;
-                }
+                allArticles = [
+                    ...dataByKey.ai,
+                    ...dataByKey.prehistory,
+                    ...dataByKey.uap
+                ];
 
-                const latestName = jsonFiles[0].name;
-                const latestFileUrl =
-                    `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/data/${latestName}`;
+                debug.innerText =
+                    `Loaded: ai(${dataByKey.ai.length}), ` +
+                    `prehistory(${dataByKey.prehistory.length}), ` +
+                    `uap(${dataByKey.uap.length}), ` +
+                    `total(${allArticles.length})`;
 
-                const dataResp = await fetch(latestFileUrl);
-                if (!dataResp.ok) {
-                    throw new Error("Could not fetch latest news JSON");
-                }
-
-                allArticles = await dataResp.json();
-
-                const count = Array.isArray(allArticles) ? allArticles.length : 0;
-                debug.innerText = `Loaded: ${latestName} (articles: ${count})`;
-
-                if (!Array.isArray(allArticles) || count === 0) {
-                    container.innerHTML =
-                        '<div class="error">No articles available in the latest file.</div>';
-                    return;
-                }
-
-                // Automatically show ALL news first
-                filterNews('All', null);
-
+                filterNews('all', null);
             } catch (err) {
                 console.error(err);
-                const debug = document.getElementById('debug');
-                debug.innerText = `Error: ${err.message}`;
                 container.innerHTML =
                     `<div class="error">Failed to load news: ${err.message}</div>`;
+                document.getElementById('debug').innerText =
+                    `Error loading JSON files: ${err.message}`;
             }
         }
 
@@ -197,7 +183,7 @@
 
             if (!articles || articles.length === 0) {
                 container.innerHTML =
-                    '<div class="loading">No articles found matching this category. Try "Show All News".</div>';
+                    '<div class="loading">No articles found for this category yet. Check back later.</div>';
                 return;
             }
 
@@ -222,77 +208,24 @@
             });
         }
 
-        function filterNews(category, evt) {
-            // Clear active state from all buttons
+        function filterNews(key, evt) {
             document.querySelectorAll('.filter-btn').forEach(btn =>
                 btn.classList.remove('active')
             );
-
-            // Highlight the clicked button when invoked via click
             if (evt && evt.currentTarget) {
                 evt.currentTarget.classList.add('active');
             }
 
-            // "Show All News" just shows everything
-            if (category === 'All') {
+            if (key === 'all') {
                 renderArticles(allArticles);
                 return;
             }
 
-            const filtered = allArticles.filter(article => {
-                const title = (article.title || "").toLowerCase();
-                const desc  = (article.description || "").toLowerCase();
-                const text  = title + " " + desc;
-
-                if (category === 'Artificial Intelligence') {
-                    return (
-                        text.includes('ai') ||
-                        text.includes('artificial intelligence') ||
-                        text.includes('machine learning') ||
-                        text.includes('neural network') ||
-                        text.includes('gpt') ||
-                        text.includes('robot') ||
-                        text.includes('automation') ||
-                        text.includes('tech')
-                    );
-                }
-
-                if (category === 'Pre-history') {
-                    return (
-                        text.includes('archaeology') ||
-                        text.includes('archaeological') ||
-                        text.includes('ancient') ||
-                        text.includes('prehistoric') ||
-                        text.includes('fossil') ||
-                        text.includes('paleo') ||
-                        text.includes('stone age') ||
-                        text.includes('history') ||
-                        text.includes('discovery')
-                    );
-                }
-
-                if (category === 'UAP') {
-                    return (
-                        text.includes('uap') ||
-                        text.includes('ufo') ||
-                        text.includes('unidentified aerial phenomenon') ||
-                        text.includes('unidentified anomalous phenomenon') ||
-                        text.includes('alien') ||
-                        text.includes('extraterrestrial') ||
-                        text.includes('flying saucer') ||
-                        text.includes('space') ||
-                        text.includes('phenomena')
-                    );
-                }
-
-                return false;
-            });
-
-            // No fallback: if filtered is empty, user sees the "No articles found" message
-            renderArticles(filtered);
+            const bucket = dataByKey[key] || [];
+            renderArticles(bucket);
         }
 
-        fetchLatestNews();
+        loadAllData();
     </script>
 </body>
 </html>
