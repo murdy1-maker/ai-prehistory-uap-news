@@ -1,0 +1,37 @@
+[
+  {
+    "title": "AMD Ryzen AI Halo 192GB Loads Models No Rival Can: DGX Spark Still Wins on Speed",
+    "link": "https://www.techtimes.com/articles/328980/20261014/amd-ryzen-ai-halo-192gb-loads-models-no-rival-can-dgx-spark-still-wins-speed.htm",
+    "description": "AMD Ryzen AI Halo 192GB launches at Micro Center for $7,299.99 as the first compact desktop system capable of loading 300-billion-parameter open-weight AI models; independent benchmarks show it produces tokens roughly 30 percent more slowly than NVIDIA DGX Spark on models that fit within 64 gigabytes of memory.",
+    "source_id": "techtimes",
+    "pubDate": "2026-10-14 04:05:41"
+  },
+  {
+    "title": "Samsung, AMD validate CXL memory for AI servers",
+    "link": "https://www.digitimes.com/news/a20261014VL208/samsung-amd-cxl-ai-server-bandwidth.html",
+    "description": "Samsung Electronics and AMD have collaborated to validate Compute Express Link (CXL) memory technology designed to expand capacity and bandwidth for AI servers, as Samsung broadens its AI infrastructure strategy beyond high-bandwidth memory (HBM) to memory pooling and enterprise storage.",
+    "source_id": "digitimes",
+    "pubDate": "2026-10-14 04:04:18"
+  },
+  {
+    "title": "University of Malaga opens Picasso supercomputer to local SMEs for artificial intelligence development",
+    "link": "https://www.surinenglish.com/malaga/malaga-city/opening-door-supercomputing-20261013000500-nt.html",
+    "description": "The University of Malaga joins the European BSC AI Factory, opening its Picasso supercomputer to local SMEs to build artificial intelligence models.",
+    "source_id": "surinenglish",
+    "pubDate": "2026-10-14 04:04:01"
+  },
+  {
+    "title": "GlobalFoundries Bets on Body Biasing: FDX Fusion Targets Physical AI Without EUV",
+    "link": "https://www.techtimes.com/articles/328956/20261014/globalfoundries-bets-body-biasing-fdx-fusion-targets-physical-ai-without-euv.htm",
+    "description": "GlobalFoundries FDX Fusion is Europe's first sub-10nm FD-SOI platform, unveiled Oct. 9, 2026. It targets 7nm-class edge AI performance for autonomous vehicles and robots without EUV lithography, though full development depends on German federal IPCEI funding. A $2B TSMC interposer deal simultaneously places GF inside AI packaging supply chains.",
+    "source_id": "techtimes",
+    "pubDate": "2026-10-14 04:03:45"
+  },
+  {
+    "title": "AI Needs a Governed Path, Not a Ban, Armor Founder Tells GovWare",
+    "link": "https://www.herald-citizen.com/online_features/press_releases/ai-needs-a-governed-path-not-a-ban-armor-founder-tells-govware/article_54cbcf3a-045f-5244-b5fd-3250e0a3237c.html",
+    "description": "Chris Drake says AI should complete useful business work automatically within policy. CISOs can enable that autonomy by resolving data classification, owning routing rules and demanding auditable evidence.",
+    "source_id": "herald_citizen",
+    "pubDate": "2026-10-14 04:03:00"
+  }
+]
