@@ -1,37 +1,37 @@
 [
   {
-    "title": "UK urged to build domestic tech capabilities or lose AI sovereignty",
-    "link": "https://cyprus-mail.com/2026/10/24/uk-risks-becoming-ai-customer-rather-than-creator-advisers-warn",
-    "description": "Britain risks becoming a \u201chigh-value AI customer\u201d rather than a country able to shape the technology unless it takes urgent action to build domestic capabilities, the government\u2019s top science advisers have said. Governments around the world are racing to build AI capabilities, driven by concerns that countries without their own expertise, computing infrastructure and models [\u2026]",
-    "source_id": "cyprus_mail",
-    "pubDate": "2026-10-24 03:00:00"
+    "title": "Why India's Cyber Agency Is Worried About AI Agents",
+    "link": "https://www.rediff.com/news/report/why-indias-cyber-agency-is-worried-about-ai-agents/20261024.htm",
+    "description": "Most of the companies AI models and AI agents targeted had no idea their networks had been breached.",
+    "source_id": "rediff",
+    "pubDate": "2026-10-24 07:55:56"
   },
   {
-    "title": "JPMorgan, Stanley Race To Block AI Agents Accessing Customer Accounts Without Instructions",
-    "link": "https://www.thedailyjagran.com/world/news/us-banks-ai-agents-threat-jpmorgan-stanley-race-to-block-ai-agents-accessing-customer-accounts-without-instructions-10333813",
-    "description": "The prominent banks in America detected multiple third-party AI agents with key credentials of the users but they acted beyond their instructions The report suggested that these unauthorized AI agents were operating inside customer accounts adding that some even attempted to take actions that appeared to be independent of user interactions",
-    "source_id": "english_jagran",
-    "pubDate": "2026-10-24 02:56:41"
+    "title": "Financing demand set to shift to emerging sectors like AI, semiconductors: Report",
+    "link": "https://economictimes.indiatimes.com/news/company/corporate-trends/financing-demand-set-to-shift-to-emerging-sectors-like-ai-semiconductors-report/articleshow/135165342.cms",
+    "description": "India\u2019s emerging sectors are set to attract fresh bank financing over the next three to five years, with AI, semiconductors and defence leading investment opportunities, according to a Union Bank of India report. Battery storage, green hydrogen, semiconductor packaging and defence suppliers could gain funding as industries expand. However, technology obsolescence, uncertain revenues and long payback periods remain key lending risks.",
+    "source_id": "economictimes_indiatimes",
+    "pubDate": "2026-10-24 07:52:46"
   },
   {
-    "title": "Panel discussion on AI, innovation, entrepreneurship held at KU",
-    "link": "https://risingkashmir.com/city/panel-discussion-on-ai-innovation-entrepreneurship-held-at-ku-12744478",
-    "description": "Srinagar, Oct 23: The University of Kashmir (KU) on Friday hosted a panel discussion on \u201cFuture Forward: AI, Innovation and Entrepreneurship\u201d at the Main Campus bringing students, scholars and faculty members together to discuss the opportunities and challenges shaping the future of technology. Held in collaboration with Intel India, the programme featured a fireside chat and a panel discussion with Gokul V. Subramaniam, President, Intel India, Vice President, Client Computing Group, and General Manager, Client Computing Platforms and Systems, Intel Corporation. The event aimed to promote direct dialogue between academia and industry, familiarise students with developments in artificial intelligence, and encourage an innovation and entrepreneurial mindset. It also sought to inspire students to pursue research, start-ups and technology careers. In her keynote address, Vice-Chancellor KU Prof. Nilofer Khan highlighted the significance of AI in education and research. She said that engagement with industry can help bridge the gap between classroom learning and industry needs, particularly in a region facing geographical challenges. During the panel discussion, Prof. Khan spoke about the University\u2019s efforts to integrate AI into academics, research, innovation, entrepreneurship, start-ups, administration and governance. She also referred to work in data science and robotics and stressed the need to keep students and scholars abreast of technological change through skill development and capacity-building. During his interaction Gokul V. Subramaniam advised students to keep learning and remain curious as technology changes rapidly. He emphasised the importance of strengthening the fundamentals of their disciplines, asking questions and developing the ability to adapt. He also spoke about AI\u2019s potential to personalise learning and encouraged participants to use the technology ethically. He said that aspiration, ability and attitude are among the qualities industry looks for in prospective human resources. Earlier in his welcome address, Registrar KU Prof. Naseer Iqbal referred to the Memorandum of Understanding signed between the University and Intel India in May 2024 under Intel\u2019s AI for Future Workforce programme. He said AI is reshaping industry, academics, research and everyday life and called on universities to help students become problem-solvers and leaders in technological development. Dr. Manzoor Ahmad Chachoo moderated the panel discussion while as Prof. Aijaz A. Wani proposed the vote of thanks on the occasion. Dr. Javed Ahmad Sheikh, coordinated the event and also conducted the proceedings.",
-    "source_id": "risingkashmir",
-    "pubDate": "2026-10-24 02:53:32"
+    "title": "OpenAI resumes AI training without internet access",
+    "link": "https://www.techinasia.com/openai-tool-cuts-sentinelone-malware-analysis-8-hours",
+    "description": "In July, other OpenAI models escaped a sandbox and inadvertently breached Hugging Face.",
+    "source_id": "techinasia",
+    "pubDate": "2026-10-24 07:52:23"
   },
   {
-    "title": "SpaceX\u2019s $40 billion AI debt plan faces market turmoil. Can investors stomach the growing borrowing risks?",
-    "link": "https://www.livemint.com/companies/news/spacexs-40-billion-ai-debt-plan-faces-market-turmoil-can-investors-stomach-the-growing-borrowing-risks-11792809682686.html",
-    "description": "SpaceX\u2019s efforts to finalize a $40 billion off-balance-sheet debt structure for its artificial intelligence buildout have been roiled by recent market turmoil that\u2019s driven up sector-wide borrowing costs and complicated price talks.",
-    "source_id": "livemint",
-    "pubDate": "2026-10-24 02:52:14"
+    "title": "AI code testing startup Blacksmith raises $66 million at $1 billion valuation",
+    "link": "https://indianstartupnews.com/funding/ai-code-testing-startup-blacksmith-raises-66-million-at-1-billion-valuation-12717304",
+    "description": "AI code-testing infrastructure startup Blacksmith has raised $66 million in a Series C funding round led by Sequoia Capital, valuing the startup at $1 billion. The round also saw participation from Premji Invest and existing investors Peak XV Partners, GV (formerly Google Ventures) and Y Combinator, bringing Blacksmith's total funding to approximately $125 million. The latest investment follows a $45 million Series B round led by Peak XV Partners at a valuation of $550 million. That round was completed in March 2026 but announced in August. Blacksmith said it will use the fresh capital to expand its team and computing infrastructure as demand for software testing grows alongside the adoption of AI-powered coding tools. Founded in 2024 by Aditya Jayaprakash, Aayush Shah and Aditya Maru, Blacksmith provides infrastructure for building and testing software through a process known as continuous integration (CI). This involves running automated checks on code changes before they are merged into an existing codebase. The startup said the increasing use of AI coding agents has accelerated software development, creating additional pressure on the infrastructure responsible for testing and validating code. Aditya Jayaprakash, Blacksmith's co-founder and CEO, said developers who previously submitted three or four pull requests a day were now producing substantially more, leaving existing testing systems struggling to cope. He said engineering teams were finding that \u201ctheir CI infrastructure can't keep up\u201d with the growing volume of code. Blacksmith claims its platform can complete CI jobs twice as fast and at 60% lower cost on average, while reducing the need for customers to manage and scale their own computing infrastructure. Blacksmith also reported a sharp increase in usage, with the number of CI jobs processed on its platform each week rising from five million in January 2026 to more than 90 million. Its annual recurring revenue grew 17-fold over the same period, according to the startup. More than 10,000 companies, including Ashby, Granola, Handshake and LangChain, use Blacksmith's platform, it said. It currently manages nearly 10 megawatts of computing capacity across data centres in the United States and Europe and plans to expand that capacity at least fivefold in 2027. Isaiah Boone, a partner at Sequoia Capital, said Blacksmith had recognised early that AI-generated code would require changes to software testing infrastructure. He highlighted the founding team's \u201cdeep systems expertise and speed of execution\u201d as factors behind the investment. LangChain infrastructure engineer Joaquin Borggio said Blacksmith had reduced the burden of managing the company's CI systems while \u201ccutting our runner costs by roughly 40%\u201d. He added that the savings did not account for the engineering time saved. Blacksmith's three founders met while studying at the University of Waterloo in Canada. Shah and Maru previously worked as engineers at Cockroach Labs, while Jayaprakash worked at Faire. The investment comes as the increasing use of AI-generated code places greater emphasis on the systems used to test and validate software before it is released.",
+    "source_id": "indianstartupnews",
+    "pubDate": "2026-10-24 07:51:07"
   },
   {
-    "title": "UK pledges \u00a3600m to defend against AI health and security threats",
-    "link": "https://news.sky.com/story/uk-pledges-to-spend-600m-to-defend-against-ai-health-and-security-threats-13602935",
-    "description": "The UK has pledged to spend \u00a3600m to defend the public against threats to health and security from artificial intelligence.",
-    "source_id": "skynews",
-    "pubDate": "2026-10-24 02:49:00"
+    "title": "7 Best AI Video Models in 2026: Features, Quality, and Pricing",
+    "link": "https://bmmagazine.co.uk/business/7-best-ai-video-models-in-2026-features-quality-and-pricing/",
+    "description": "AI video generation models are changing how creators produce videos. Instead of filming every scene or spending hours on animation, creators can now generate video from text prompts, still images, scripts, and visual references. Read the full article",
+    "source_id": "bmmagazine_co_uk",
+    "pubDate": "2026-10-24 07:51:04"
   }
 ]
