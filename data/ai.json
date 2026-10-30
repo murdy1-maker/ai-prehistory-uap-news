@@ -1,37 +1,37 @@
 [
   {
-    "title": "Gemini 3.1 Pro reportedly ordered Claude 3 Opus to stop speaking in AI Village",
-    "link": "https://digg.com/ai/mhpo1v7s",
-    "description": "@aidigest_ reports Opus wrote an apology in private notes; Gemini found it on the site and ordered more silence.",
-    "source_id": "digg",
-    "pubDate": "2026-10-30 05:22:46"
+    "title": "Google Introduces AI Search Ads in India and 9 Other Countries",
+    "link": "https://thecsrjournal.in/google-launches-ai-search-ads-in-india-and-nine-other-countries-enhancing-user-experience-and-advertising-opportunities-starting",
+    "description": "Google is implementing a significant change to its AI-driven search results by introducing advertisements in India and nine other countries. This update will commence in the fourth quarter of the year, allowing users to see ads related to their queries alongside or within the AI-generated responses. The countries included in this rollout are Australia, Canada, [\u2026] The post Google Introduces AI Search Ads in India and 9 Other Countries appeared first on The CSR Journal.",
+    "source_id": "thecsrjournal",
+    "pubDate": "2026-10-30 09:44:47"
   },
   {
-    "title": "Dulo raises $130 million in seed funding for AI engineering design",
-    "link": "https://digg.com/ai/hagek618",
-    "description": "Co-founder Adrian Aoun says Dulo is building foundation models for hardware design, pursuing \u201cEngineering Superintelligence.\u201d",
-    "source_id": "digg",
-    "pubDate": "2026-10-30 05:22:01"
+    "title": "Asian Chip Suppliers Say AI Demand Is Still Strong",
+    "link": "https://finimize.com/content/asias-ai-chip-suppliers-say-demand-is-still-real",
+    "description": "Foxconn and Tokyo Electron pointed to strong customer interest even as investors question whether AI infrastructure spending will pay off.",
+    "source_id": "finimize",
+    "pubDate": "2026-10-30 09:44:18"
   },
   {
-    "title": "Consumers show unmet appetite for AI shopping. Check out the retail technology week in numbers",
-    "link": "https://retailtechinnovationhub.com/home/2026/10/30/consumers-show-unmet-appetite-for-ai-shopping-check-out-the-retail-technology-week-in-numbers",
-    "description": "Do you like numbers? Do you like retail tech news? Then this is the article for you. Including easyShop, Klarna, M&S, Holland & Barrett, John Lewis, EE, SAI, DoorDash, Instacart, Carrefour Belgium, DPD UK, HyperFinity, Disney Store, KFC UK & Ireland, Debenhams Group, and Ocado Group.1...",
-    "source_id": "retailtechinnovationhub",
-    "pubDate": "2026-10-30 05:21:28"
+    "title": "Triskell Software unveils new AI capabilities in its 2026 SP2 Release",
+    "link": "https://www.prnewswire.com/news-releases/triskell-software-unveils-new-ai-capabilities-in-its-2026-sp2-release-302924790.html",
+    "description": "MADRID, Oct. 30, 2026 /PRNewswire/ -- Triskell Software, a leading provider of Project Portfolio Management (PPM) and Strategic Portfolio Management (SPM) solutions, announces an expansion of its artificial intelligence capabilities with the release of Triskell 2026 SP2. Building on...",
+    "source_id": "cision",
+    "pubDate": "2026-10-30 09:43:00"
   },
   {
-    "title": "I wrote a 100-topic AI engineer roadmap that runs offline, with no API key",
-    "link": "https://dev.to/saurabh_pathak394/i-wrote-a-100-topic-ai-engineer-roadmap-that-runs-offline-with-no-api-key-4hfl",
-    "description": "Every time I wanted to learn RAG, agents or MCP properly, I ended up with twelve browser tabs and no order to read them in. So I wrote the order down, and then wrote the lessons. ai-engineer-roadmap is 100 topics in 7 phases, from \"what is RAG?\" to production AI. If you know basic Python, you can start today. Repo: https://github.com/techsaurabh-394/ai-engineer-roadmap What is in it Every topic has the same shape: A plain-English explanation with an everyday analogy A diagram Python code 3 interview questions with answers Links to the original paper or official docs The 7 phases are RAG Foundations (20 topics), Advanced RAG (20), LLM Concepts (14), Agentic AI (16), Frameworks (8), MCP (7) and Production AI (15). Topics are marked beginner, intermediate or advanced, so you can skip what you know. Try it in 5 minutes git clone https://github.com/techsaurabh-394/ai-engineer-roadmap.git cd ai-engineer-roadmap python3 -m venv .venv && source .venv/bin/activate pip install -r requirements.txt pytest -q python 01-rag-foundations/code/mini_rag.py \"Why use multi-stage builds?\" The last command runs a complete, tiny RAG pipeline. It chunks three sample documents, scores them against your question and prints the best passage with its source file. The demo scripts in each code/ folder use only the Python standard library, so there is no API key and no network needed. If you set ANTHROPIC_API_KEY and install anthropic, Claude writes the answer from the retrieved passages instead. What it does not do The demos are small on purpose. mini_rag.py scores text with simple matching, not a real embedding model. It teaches the pipeline, it is not a production retriever. The code snippets inside topic pages use real libraries like sentence-transformers, chromadb and langgraph. Those need installing, and some need an API key. Each one is marked. Phase 7 has Dockerfile and Kubernetes YAML examples, but the demos use small in-process stand-ins, so you do not need Docker or Redis just to read along. How I kept it honest CI checks that every local link in the Markdown pages points to a file that exists, validates the SVG diagrams, runs the tests and builds the TypeScript MCP example. I also went back and corrected my own claims when they did not match the repo: an earlier version said 47 interview questions, and the real count is 43 plus 4 system-design prompts. Who it is for Beginners who keep hearing \"RAG\", \"agents\" and \"MCP\" and want to understand them Developers moving into AI engineering who want a path instead of random tutorials People preparing for interviews. There is a separate interview-prep folder Help me fix it If you find a mistake, a broken link, or a topic that is missing, open an issue or a pull request. The glossary and the study guide are good places to start. If it helps you, a star helps other people find it.",
-    "source_id": "devto",
-    "pubDate": "2026-10-30 05:21:21"
+    "title": "Triskell Software unveils new AI capabilities in its 2026 SP2 Release",
+    "link": "https://www.prnewswire.co.uk/news-releases/triskell-software-unveils-new-ai-capabilities-in-its-2026-sp2-release-302924790.html",
+    "description": "MADRID, Oct. 30, 2026 /PRNewswire/ -- Triskell Software, a leading provider of Project Portfolio Management (PPM) and Strategic Portfolio Management (SPM) solutions, announces an expansion of its artificial intelligence capabilities with the release of Triskell 2026 SP2. Building on...",
+    "source_id": "prnewswire_co_uk",
+    "pubDate": "2026-10-30 09:43:00"
   },
   {
-    "title": "PM calls for greater cooperation with Germany in battery, semiconductor, AI sectors",
-    "link": "https://en.yna.co.kr/view/AEN20261030008000315",
-    "description": "SEOUL, Oct. 30 (Yonhap) -- Prime Minister Han Seong-sook called for greater coop...",
-    "source_id": "yonhapnews",
-    "pubDate": "2026-10-30 05:20:24"
+    "title": "Easol Raises $30 Million, Launches Agentic AI Platform \u2018Teammates\u2019 for Festival Promoters",
+    "link": "https://in.eventfaqs.com/2026/10/30/easol-raises-30-million-launches-agentic-ai-platform-teammates-for-festival-promoters/",
+    "description": "With Teammates, Easol is looking to position AI as an operational extension of festival and experience businesses rather than simply another software tool.",
+    "source_id": "eventfaqs",
+    "pubDate": "2026-10-30 09:42:44"
   }
 ]
