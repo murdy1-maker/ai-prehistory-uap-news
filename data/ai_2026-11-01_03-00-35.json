@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Developers ask AI which tool to use. Here\u2019s how we track the answer.",
+    "link": "https://thenewstack.io/tracking-ai-tool-recommendations/",
+    "description": "We asked Claude \u201cWhich CMS platforms support MCP integration?\u201d It searched the web and put Webflow in its first group, The post Developers ask AI which tool to use. Here\u2019s how we track the answer. appeared first on The New Stack.",
+    "source_id": "thenewstack_io",
+    "pubDate": "2026-10-31 15:00:00"
+  },
+  {
+    "title": "Here's the Real Winner of the AI Build-Out",
+    "link": "https://www.fool.com/investing/2026/10/31/heres-the-real-winner-of-the-ai-build-out/",
+    "description": "Taiwan Semiconductor is set to cash in as long as the build-out continues.",
+    "source_id": "fool",
+    "pubDate": "2026-10-31 15:00:00"
+  },
+  {
+    "title": "\u2018People are losing their own voice in the recruitment world\u2019: AI no help in a tight labour market",
+    "link": "https://www.waikatotimes.co.nz/business/361103019/people-are-losing-their-own-voice-recruitment-world-ai-no-help-tight-labour-market",
+    "description": "At a time when technology should be helping job seekers get ahead, experts say it is actually doing them a disservice.",
+    "source_id": "waikatotimes_nz",
+    "pubDate": "2026-10-31 15:00:00"
+  },
+  {
+    "title": "\u2018People are losing their own voice in the recruitment world\u2019: AI no help in a tight labour market",
+    "link": "https://www.thepost.co.nz/business/361103019/people-are-losing-their-own-voice-recruitment-world-ai-no-help-tight-labour-market",
+    "description": "At a time when technology should be helping job seekers get ahead, experts say it is actually doing them a disservice.",
+    "source_id": "thepost_nz",
+    "pubDate": "2026-10-31 15:00:00"
+  },
+  {
+    "title": "New NVIDIA UEFI GPU Unlocker Brings Up To 75% Higher AI Compute Performance To RTX 20, 30 & 40 Series GPUs On Windows",
+    "link": "https://wccftech.com/new-nvidia-uefi-gpu-unlocker-brings-up-to-75-higher-ai-compute-performance-to-rtx-20-30-40-series-gpus-on-windows/",
+    "description": "A new open-source tool called NV UEFI Unlocker promises to unleash previously restricted Tensor Core compute performance on NVIDIA GeForce RTX 20, 30, and 40 Series GPUs, bringing functionality previously associated primarily with Linux-based modifications to Windows users. Developed by GitHub user physicsdolphin, the NV UEFI Unlocker project uses a UEFI-based approach to modify GPU behavior before NVIDIA's graphics driver initializes. Unlike traditional firmware modifications, it doesn't require permanently flashing the GPU's VBIOS or patching NVIDIA's drivers. The unlock is temporary and disappears after a complete power-off. As we previously reported on Wccftech, the original GPU Unlock project developed by [\u2026]",
+    "source_id": "wccftech",
+    "pubDate": "2026-10-31 15:00:00"
+  }
+]

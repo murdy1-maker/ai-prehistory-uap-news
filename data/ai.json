@@ -1,37 +1,37 @@
 [
   {
-    "title": "Sarvam AI co-founder warns India risks becoming a 'digital colony' over dependence on foreign AI",
-    "link": "https://www.hindustantimes.com/trending/sarvam-ai-co-founder-warns-india-risks-becoming-a-digital-colony-over-dependence-on-foreign-ai-101793434992286.html",
-    "description": "Sarvam AI co-founder Vivek Raghavan urged India to develop homegrown AI capabilities to avoid foreign dependence.",
-    "source_id": "hindustantimes",
-    "pubDate": "2026-10-31 08:43:45"
+    "title": "Developers ask AI which tool to use. Here\u2019s how we track the answer.",
+    "link": "https://thenewstack.io/tracking-ai-tool-recommendations/",
+    "description": "We asked Claude \u201cWhich CMS platforms support MCP integration?\u201d It searched the web and put Webflow in its first group, The post Developers ask AI which tool to use. Here\u2019s how we track the answer. appeared first on The New Stack.",
+    "source_id": "thenewstack_io",
+    "pubDate": "2026-10-31 15:00:00"
   },
   {
-    "title": "Cognizant sets up OpenAI Frontier Capability Group to help enterprises deploy AI at scale",
-    "link": "https://yourstory.com/enterprise-story/2026/10/cognizant-sets-up-openai-frontier-capability-group-to-help-enterprises-deploy-ai-at-scale",
-    "description": "Cognizant said it is scaling OpenAI across its own sales and customer success operations first, so clients can benefit from approaches tested at enterprise level.",
-    "source_id": "yourstory",
-    "pubDate": "2026-10-31 08:43:17"
+    "title": "Here's the Real Winner of the AI Build-Out",
+    "link": "https://www.fool.com/investing/2026/10/31/heres-the-real-winner-of-the-ai-build-out/",
+    "description": "Taiwan Semiconductor is set to cash in as long as the build-out continues.",
+    "source_id": "fool",
+    "pubDate": "2026-10-31 15:00:00"
   },
   {
-    "title": "Obasanjo Warns AI Could Be Another Western Trap, Says Debt Destroys Generations",
-    "link": "https://www.arise.tv/obasanjo-warns-ai-could-be-another-western-trap-says-debt-destroys-generations/",
-    "description": "Obasanjo warns developing countries against blindly adopting Western ideas, questions Nigeria\u2019s debt burden and urges AI solutions to grassroots challenges.",
-    "source_id": "arise",
-    "pubDate": "2026-10-31 08:41:58"
+    "title": "\u2018People are losing their own voice in the recruitment world\u2019: AI no help in a tight labour market",
+    "link": "https://www.waikatotimes.co.nz/business/361103019/people-are-losing-their-own-voice-recruitment-world-ai-no-help-tight-labour-market",
+    "description": "At a time when technology should be helping job seekers get ahead, experts say it is actually doing them a disservice.",
+    "source_id": "waikatotimes_nz",
+    "pubDate": "2026-10-31 15:00:00"
   },
   {
-    "title": "Chamet Strengthens Multimodal AI Moderation for Live Video Chat as Singapore\u2019s Online Safety Commission Takes Effect",
-    "link": "https://thesun.my/business/corporate-news/chamet-strengthens-multimodal-ai-moderation-for-live-video-chat-as-singapores-online-safety-commission-takes-effect/",
-    "description": "Multi-model risk scoring and multimodal detection of suspected minors help the adults-only platform find and act on harmful content in real time",
-    "source_id": "thesun_my",
-    "pubDate": "2026-10-31 08:39:05"
+    "title": "\u2018People are losing their own voice in the recruitment world\u2019: AI no help in a tight labour market",
+    "link": "https://www.thepost.co.nz/business/361103019/people-are-losing-their-own-voice-recruitment-world-ai-no-help-tight-labour-market",
+    "description": "At a time when technology should be helping job seekers get ahead, experts say it is actually doing them a disservice.",
+    "source_id": "thepost_nz",
+    "pubDate": "2026-10-31 15:00:00"
   },
   {
-    "title": "IBS Proposes HK$563 Million Acquisition of AI Chip Enterprise",
-    "link": "https://thesun.my/business/corporate-news/ibs-proposes-hk563-million-acquisition-of-ai-chip-enterprise/",
-    "description": "HONG KONG SAR \u2013 Media OutReach Newswire \u2013 30 October 2026 \u2013 International Business Settlement Holdings Limited (\u201cIBS\u201d or the \u201cCompany\u201d, together with its subsidiaries, the \u201cGroup\u201d; stock code: 0147.HK) entered into a Share Purchase Agreement with the shareholder of QuantumCompute Solutions Limited (\u201cQuantumCompute Solutions\u201d) to acquire its entire equity interests for a consideration of HK$563 million.",
-    "source_id": "thesun_my",
-    "pubDate": "2026-10-31 08:37:23"
+    "title": "New NVIDIA UEFI GPU Unlocker Brings Up To 75% Higher AI Compute Performance To RTX 20, 30 & 40 Series GPUs On Windows",
+    "link": "https://wccftech.com/new-nvidia-uefi-gpu-unlocker-brings-up-to-75-higher-ai-compute-performance-to-rtx-20-30-40-series-gpus-on-windows/",
+    "description": "A new open-source tool called NV UEFI Unlocker promises to unleash previously restricted Tensor Core compute performance on NVIDIA GeForce RTX 20, 30, and 40 Series GPUs, bringing functionality previously associated primarily with Linux-based modifications to Windows users. Developed by GitHub user physicsdolphin, the NV UEFI Unlocker project uses a UEFI-based approach to modify GPU behavior before NVIDIA's graphics driver initializes. Unlike traditional firmware modifications, it doesn't require permanently flashing the GPU's VBIOS or patching NVIDIA's drivers. The unlock is temporary and disappears after a complete power-off. As we previously reported on Wccftech, the original GPU Unlock project developed by [\u2026]",
+    "source_id": "wccftech",
+    "pubDate": "2026-10-31 15:00:00"
   }
 ]
