@@ -1,37 +1,37 @@
 [
   {
-    "title": "Apple leadership may have differing views on AI strategy",
-    "link": "https://appleinsider.com/articles/26/11/08/apple-leadership-may-have-differing-views-on-ai-strategy",
-    "description": "A new report suggests Apple still faces internal battles around AI strategy even though it has seemingly held to the same strategy set by John Giannandrea nearly a decade prior. Apple Intelligence development continues The usual chatter and rumors that make it out of containment to reporters' ears suggest catastrophe and confusion within Apple even as evidence suggests otherwise. In a world where the AI bubble is bursting, if not at least deflating faster by the day, it's odd to see reports continue to suggest Apple has a poor strategy. According to the \"Power On\" newsletter from Bloomberg, CEO John Ternus has asked Craig Federighi to produce more AI faster, even as the report contradicts itself and suggests Federighi's planning is already on too short of a timeframe. The report doesn't reflect the realities as they have been observed externally, where Apple has kept a cool head and avoided billions in losses and wasted investment versus its competitors. Continue Reading on AppleInsider | Discuss on our Forums",
-    "source_id": "appleinsider",
-    "pubDate": "2026-11-08 15:26:08"
+    "title": "US midterm results may give India trade leverage, but tariff and AI risks remain",
+    "link": "https://economictimes.indiatimes.com/opinion/et-commentary/us-midterm-results-may-give-india-trade-leverage-but-tariff-and-ai-risks-remain/articleshow/135668408.cms",
+    "description": "The US midterm results may give India some room in trade negotiations by increasing congressional scrutiny of executive action, but they do not remove tariff risks or alter Washington's strategic priorities. AI investment is also unlikely to retreat, with capital expected to remain within the US rather than shift significantly to emerging markets.",
+    "source_id": "economictimes_indiatimes",
+    "pubDate": "2026-11-09 02:34:41"
   },
   {
-    "title": "Siri AI chief may step down as more Apple departures are rumored",
-    "link": "https://appleinsider.com/articles/26/11/08/siri-ai-chief-may-step-down-as-more-apple-departures-are-rumored",
-    "description": "Apple's Mike Rockwell is reportedly considering leaving at least his current role as head of Siri AI, perhaps prompting a shakeup of executive roles at the company. Apple Park Rockwell was behind the development of the Apple Vision Pro and subsequently became head of Siri AI as Apple worked to revamp Siri into the version released in 2026. According to Bloomberg's \"Power On\" newsletter, though, he is seriously contemplating his future. Reportedly, this could comprise his stepping down as lead of Siri AI during 2027. However, it might further mean his leaving Apple altogether. The new report has no further detail, but speculates that if Rockwell makes either move, his current responsibilities would probably be shared between two people. Those are ex-Google AI veteran Amar Subramanya, and Sebastien Marineau. Continue Reading on AppleInsider | Discuss on our Forums",
-    "source_id": "appleinsider",
-    "pubDate": "2026-11-08 15:25:28"
+    "title": "IIT Delhi Partners With Walmart Global Tech For Rs 9 Crore AI Research",
+    "link": "https://www.ndtv.com/education/iit-delhi-partners-with-walmart-global-tech-for-rs-9-crore-ai-research-and-education-initiative-12301629",
+    "description": "IIT Delhi has collaborated with the Walmart Global Tech to strengthen research, education in Artificial Intelligence (AI), Machine Learning (ML) and Data Learning.",
+    "source_id": "ndtv",
+    "pubDate": "2026-11-09 02:32:48"
   },
   {
-    "title": "\ud83d\ude80 Looking for Contributors: Help Build Assembly, an Open-Source Multi-Agent AI Workspace",
-    "link": "https://dev.to/anubhab_das/looking-for-contributors-help-build-assembly-an-open-source-multi-agent-ai-workspace-4934",
-    "description": "What if instead of relying on one AI model, you could bring multiple AI agents together to solve complex problems? That's the idea behind Assembly. I'm building Assembly, an experimental open-source multi-agent AI workspace where you submit a question, choose a time budget, and let a team of AI agents work independently, compare answers, challenge disagreements, and synthesize a final response with supporting sources and uncertainty notes. The goal isn't simply to generate another AI response. It's to explore how multiple AI models can collaborate, challenge each other, and improve the reasoning process. \ud83e\udde0 What's happening under the hood? Assembly brings together several stages: Planning: Assigns suitable roles to AI agents. Independent reasoning: Agents solve the problem separately. Debate & verification: Agents examine disagreements, evidence, and contradictions. Synthesis: Combines findings into a structured final response. It's still experimental, and multi-agent consensus doesn't guarantee correctness. That's exactly why testing, evaluation, and reliability matter. \ud83d\udee0\ufe0f Tech Stack The project currently uses: Frontend: Next.js, React, TypeScript, Tailwind CSS. Backend: Python, FastAPI. AI: Multi-agent orchestration, model routing, consensus and debate. Testing: Pytest, Vitest, Playwright. \ud83d\udc68\u200d\ud83d\udcbb Who am I looking for? I'm looking for contributors interested in: Frontend development and UI/UX improvements. Python, FastAPI, and backend engineering. AI agents and LLM orchestration. Model provider integrations. Testing, debugging, and performance improvements. Cybersecurity, privacy, and reliability. Documentation and developer experience. You don't need to be an AI expert to contribute. Developers at different experience levels are welcome. \ud83e\udd1d How to Get Involved Getting started is simple: Visit the Assembly GitHub Repository. Explore the codebase and existing issues. Check the Contributing Guidelines. Pick an issue, share your ideas, and submit a pull request. Small improvements, bug fixes, testing, and documentation contributions are just as valuable. \ud83c\udf1f Let's Build Together Assembly is an evolving open-source project, and I'd love to have more developers involved in shaping its direction. Whether you're interested in AI, full-stack development, backend engineering, or simply want to make your first open-source contribution, there's room to collaborate. Star the repository, explore the project, and consider becoming a contributor. \ud83d\udd17 GitHub: https://github.com/anubhab7105/Assembly \ud83c\udf10 Live Demo: https://assembly-murex.vercel.app/ Let's build something meaningful together! \ud83d\ude80",
-    "source_id": "devto",
-    "pubDate": "2026-11-08 15:21:27"
+    "title": "Predictions 2027: Why the future of work is 'AI and human' adjacent",
+    "link": "https://itbrief.co.nz/story/predictions-2027-why-the-future-of-work-is-ai-and-human-adjacent",
+    "description": "Businesses will need new workforce plans as AI agents begin sharing boardroom attention with people and reshaping how work is assigned.",
+    "source_id": "itbrief_co_nz",
+    "pubDate": "2026-11-09 02:31:00"
   },
   {
-    "title": "Staff at the US center for AI safety are reporting to the White House, raising independence concerns",
-    "link": "https://www.wccbcharlotte.com/2026/11/08/staff-at-the-us-center-for-ai-safety-are-reporting-to-the-white-house-raising-independence-concerns/",
-    "description": "The tiny U.S. government division charged with assessing the safety of new artificial intelligence offerings doesn\u2019t have a permanent leader and has stopped publishing its research.",
-    "source_id": "wccbcharlotte",
-    "pubDate": "2026-11-08 15:20:13"
+    "title": "Predictions 2027: Why the future of work is 'AI and human' adjacent",
+    "link": "https://itbrief.asia/story/predictions-2027-why-the-future-of-work-is-ai-and-human-adjacent",
+    "description": "Businesses will need new workforce plans as AI agents begin sharing boardroom attention with people and reshaping how work is assigned.",
+    "source_id": "itbrief_asia",
+    "pubDate": "2026-11-09 02:31:00"
   },
   {
-    "title": "One Tech Tip: How to get started with AI agents, and which are best for specific tasks",
-    "link": "https://www.dailycamera.com/2026/11/08/tech-tip-ai-agents/",
-    "description": "Each agent has unique strengths, so it's essential to experiment and find what works best for you.",
-    "source_id": "dailycamera",
-    "pubDate": "2026-11-08 15:20:11"
+    "title": "Predictions 2027: Why the future of work is 'AI and human' adjacent",
+    "link": "https://itbrief.in/story/predictions-2027-why-the-future-of-work-is-ai-and-human-adjacent",
+    "description": "Businesses will need new workforce plans as AI agents begin sharing boardroom attention with people and reshaping how work is assigned.",
+    "source_id": "itbrief_in",
+    "pubDate": "2026-11-09 02:31:00"
   }
 ]
