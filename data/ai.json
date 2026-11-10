@@ -1,37 +1,37 @@
 [
   {
-    "title": "Australia to mandate AI breach reporting, create regulator after OpenAI breach",
-    "link": "https://www.myjoyonline.com/australia-to-mandate-ai-breach-reporting-create-regulator-after-openai-breach/",
-    "description": "Australia will require artificial intelligence companies to report breaches and may change criminal law to address \"serious misconduct\", Prime Minister Anthony Albanese said on Tuesday, after an OpenAI agent broke into a government website.",
-    "source_id": "myjoyonline",
-    "pubDate": "2026-11-10 01:54:00"
+    "title": "Vertiv partners with Infineon to scale power semiconductors for AI data centers",
+    "link": "https://www.datacenterdynamics.com/en/news/vertiv-partners-with-infineon-to-scale-power-semiconductors-for-ai-data-centers/",
+    "description": null,
+    "source_id": "datacenterdynamics",
+    "pubDate": "2026-11-10 10:36:53"
   },
   {
-    "title": "TGI Solar Power Group and TGI AMIRON Announce Preliminary Design Completion for Planned Aktau AI Data Center Campus",
-    "link": "https://www.jonesborosun.com/news/national/tgi-solar-power-group-and-tgi-amiron-announce-preliminary-design-completion-for-planned-aktau-ai/article_9f39fdfc-e5b9-5496-a1db-9a9e0edf5489.html",
-    "description": "Preliminary design complete for 51.7-hectare campus at SEZ \u00abAktau Seaport\u00bb; Digital Core reference architecture defined; first AXIPOD\u2122 modular data centers planned",
-    "source_id": "jonesborosun",
-    "pubDate": "2026-11-10 01:51:58"
+    "title": "Artificial intelligence provides advice to Pro Juventute on parenting questions",
+    "link": "https://www.bluewin.ch/en/news/artificial-intelligence-provides-advice-to-pro-juventute-on-parenting-questions-li.3668383",
+    "description": "Pro Juventute is expanding its parenting counseling services with artificial intelligence (AI). The use of AI assistants to answer parents\u2019 questions is still being tested. However, the service is scheduled to be rolled out gradually starting next year.",
+    "source_id": "bluewin",
+    "pubDate": "2026-11-10 10:36:36"
   },
   {
-    "title": "TGI Solar Power Group and TGI AMIRON Announce Preliminary Design Completion for Planned Aktau AI Data Center Campus",
-    "link": "https://www.joplinglobe.com/region/tgi-solar-power-group-and-tgi-amiron-announce-preliminary-design-completion-for-planned-aktau-ai/article_ab6f8a64-8065-58eb-b441-a0ca81f8ae93.html",
-    "description": "Preliminary design complete for 51.7-hectare campus at SEZ \u00abAktau Seaport\u00bb; Digital Core reference architecture defined; first AXIPOD\u2122 modular data centers planned",
-    "source_id": "joplinglobe",
-    "pubDate": "2026-11-10 01:51:58"
+    "title": "76% of London Market Firms Expect Their Core Systems Will Need to Change to Support AI, Federato Research Finds",
+    "link": "https://www.finanznachrichten.de/nachrichten-2026-11/70085786-76-of-london-market-firms-expect-their-core-systems-will-need-to-change-to-support-ai-federato-research-finds-004.htm",
+    "description": "Survey of 245 London Market professionals finds most firms expect significant changes to the core systems behind AI and underwriting Key takeaways 76% expect their core systems will need significa...",
+    "source_id": "finanznachrichten_de",
+    "pubDate": "2026-11-10 10:36:00"
   },
   {
-    "title": "Openai Identifies 948 Linux Privilege Escalation Flaws Using AI Arabian Post",
-    "link": "https://menafn.com/1111938678/Openai-Identifies-948-Linux-Privilege-Escalation-Flaws-Using-AI-Arabian-Post",
-    "description": "(MENAFN - The Arabian Post) clearfix\"> OpenAI has disclosed that an automated cybersecurity system generated working exploits for 948 distinct Linux kernel privilege escalation vulnerabilities ...",
-    "source_id": "menafn",
-    "pubDate": "2026-11-10 01:51:54"
+    "title": "80% of Banks Have Already Faced Agentic AI Attacks, According to BioCatch Survey",
+    "link": "https://www.financemagnates.com/forex/80-of-banks-have-already-faced-agentic-ai-attacks-according-to-biocatch-survey/",
+    "description": "Behavioral-biometrics firm BioCatch has highlighted the growing challenge financial institutions face in distinguishing legitimate customers, authorised AI assistants and malicious automation. Its 2026 survey of 1,440 fraud-management, AML, and risk-and-compliance professionals at banks in 25 countries found that 80% of respondents said their institutions had already encountered attacks using agentic AI. London's trading industry is coming home! The Shift to Agentic Trading In 2026, several retail brokers, including the industry\u2019s biggest platform providers \u2013 MetaQuotes and Spotware \u2013 have enabled traders to connect their accounts with AI agents via MCP integrations. An FM Intelligence analysis found that Claude is particularly popular, with 9 out of 10 brokers enabling integrations with Anthropic\u2019s tool. Most have introduced safeguards around agentic access. Robinhood, for example, requires a dedicated Agentic Account for AI-agent use, while its agreement makes customers responsible for funding the account and for activity conducted within it. However, risks might emerge in other stages, such as onboarding. While KYC and fraud controls help address risks such as affiliate fraud, as AI agents become more capable of mimicking human interaction, device- and IP-based controls alone may provide an incomplete defence. Telling Humans and AI Apart BioCatch says its new capability, AiRE (Agentic AI Risk Essentials), can detect AI agents acting on behalf of account holders, or at the behest of bad actors, before money moves. The company says AiRE surfaces behavioral anomalies and unusual interaction patterns, including synthetic inputs, browser permission profiles, agent infrastructure, and agent declarations. It also covers cloud-based agents such as Muse. Institutions using BioCatch\u2019s agentic-AI detection receive indicators of potentially risky agentic activity. More broadly, BioCatch\u2019s behavioral-biometrics platform analyses signals including keystroke and mouse activity, touchscreen behaviour, and AI-agent usage to help distinguish legitimate customers from automated or fraudulent activity Such telemetry could inform decisions to block, review, or permit automated sessions, though its effectiveness would depend on implementation and the specific platform. The Broker-Bank Liability Divide The tool's release comes as financial institutions, such as major UK banks including HSBC, Nationwide, NatWest, Barclays and Lloyds, reportedly blocked AI agents from accessing customer accounts over fraud and liability concerns. Interestingly, retail brokers appear far less concerned about the liability implications of agentic trading. Robinhood told Finance Magnates that \u201ccustomers are solely responsible for how the agents are built and any resulting actions the agents take.\u201d \u201cWhether banks plan to block all agents, grant access to only certain, pre-approved agents, or open the floodgates and allow any agent to access their platforms, those institutions must be able to first reliably detect whether the entity controlling a session is a human or an agent and if the intent of that entity is genuine or malicious,\u201d BioCatch Chief Product Officer Ayelet Eliezer said. \u201cArtificial intelligence capabilities for consumers, institutions, and bad actors alike are evolving rapidly.\u201d The survey also found that 84% of respondents viewed AI agents as the industry\u2019s greatest exploitable vulnerability over the coming year, while 72% expected it to be very difficult to distinguish legitimate AI-assisted actions from malicious or manipulated activity. This article was written by Adonis Adoni at www.financemagnates.com.",
+    "source_id": "financemagnates",
+    "pubDate": "2026-11-10 10:35:24"
   },
   {
-    "title": "CR Longdation Aethereal Cybersecurity \u00d7 Global Cybersecurity Alliance (GCSA) Join Hands To Establish The AI And Cybersecurity Research Centre Arabian Post",
-    "link": "https://menafn.com/1111938670/CR-Longdation-Aethereal-Cybersecurity-Global-Cybersecurity-Alliance-GCSA-Join-Hands-To-Establish-The-AI-And-Cybersecurity-Research-Centre-Arabian-Post",
-    "description": "(MENAFN - The Arabian Post) clearfix\"> HONG KONG SAR \u2013 Media OutReach Newswire \u2013 5 November 2026 \u2013 CR Longdation Aethereal Cybersecurity \u2013 Global Cybersecurity Alliance Limited (GCSA) announced a ...",
-    "source_id": "menafn",
-    "pubDate": "2026-11-10 01:51:52"
+    "title": "AI photos: INEC bans web cameras for voter registration, introduces app-based cameras",
+    "link": "https://technext24.com/news/inec-bans-web-cameras-for-voter-registration/",
+    "description": "The Independent National Electoral Commission (INEC) has banned web cameras in voter registration after admitting that AI-generated pictures\u2026",
+    "source_id": "technext24",
+    "pubDate": "2026-11-10 10:35:08"
   }
 ]
