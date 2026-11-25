@@ -1,37 +1,37 @@
 [
   {
-    "title": "OIC-COMSTECH, Al-Ghazali University explore cooperation on halal science, AI and research",
-    "link": "https://www.24newshd.tv/24-Nov-2026/oic-comstech-al-ghazali-university-explore-cooperation-halal-science-ai-research",
-    "description": "OIC-COMSTECH and Al-Ghazali University, Karachi, have explored cooperation in research, emerging technologies, halal science, academic exchanges and engagement between scientists and religious scholars.",
-    "source_id": "newshd24",
-    "pubDate": "2026-11-24 13:42:18"
+    "title": "AI In Education: Students Need Judgment Innovation City",
+    "link": "https://menafn.com/1112019613/AI-In-Education-Students-Need-Judgment-Innovation-City",
+    "description": "(MENAFN - Khaleej Times) Students in the UAE now carry a tutor that never sleeps. The Ministry of Education added artificial intelligence to the public-school curriculum from the 2025-26 academic ...",
+    "source_id": "menafn",
+    "pubDate": "2026-11-25 04:21:16"
   },
   {
-    "title": "Parks Associates Releases State of Multifamily 2026 Report Highlighting AI, Connectivity, and Technology ROI",
-    "link": "https://www.prnewswire.com/news-releases/parks-associates-releases-state-of-multifamily-2026-report-highlighting-ai-connectivity-and-technology-roi-302948833.html",
-    "description": "82% of residents paying a technology amenity fee believe it is worth the cost PLANO, Texas, Nov. 24, 2026 /PRNewswire/ -- Parks Associates, a leading international research and consulting firm, today announced the release of its State of Multifamily 2026: Adoption, Research, Tech (S.M.A.R....",
-    "source_id": "cision",
-    "pubDate": "2026-11-24 13:42:00"
+    "title": "Only 24% Of UAE AI Chiefs Control Investment Decisions As Governance Delays Adoption: IBM",
+    "link": "https://menafn.com/1112019611/Only-24-Of-UAE-AI-Chiefs-Control-Investment-Decisions-As-Governance-Delays-Adoption-IBM",
+    "description": "(MENAFN - Khaleej Times) Only 24 per cent of chief artificial intelligence officers (CAIOs) in the UAE have full control over AI investment decisions, highlighting a gap between identifying ...",
+    "source_id": "menafn",
+    "pubDate": "2026-11-25 04:21:15"
   },
   {
-    "title": "Mathematicians Adapt as AI Transforms Their Field",
-    "link": "https://www.miragenews.com/mathematicians-adapt-as-ai-transforms-their-1782872/",
-    "description": "Mathematics is having an existential crisis. Author David Manderscheid Professor of Mathematics, University of Tennessee On Nov. 20, 2026, a",
-    "source_id": "miragenews",
-    "pubDate": "2026-11-24 13:40:34"
+    "title": "Leaderboards are marketing. Your model choice needs your own eval set (Wednesday AI Opinion)",
+    "link": "https://dev.to/m_t_ramkrushna/leaderboards-are-marketing-your-model-choice-needs-your-own-eval-set-wednesday-ai-opinion-dki",
+    "description": "Wednesday AI Opinion. Today's take: a public leaderboard rank is not a reason to pick a model for your product. It's a marketing signal. Treat it like one. I'm not saying benchmarks are useless. They're a good way to build a shortlist. But the moment a ranking becomes the thing everyone optimizes for, it stops telling you what you actually need to know: how the model behaves on your inputs, with your prompts, under your constraints. Here's why I think that, with sources. 1. The leaderboard can be gamed, and has been In April 2025, Meta's Llama 4 Maverick ranked second on LM Arena. But Meta's own announcement said the Arena version was an \"experimental chat version,\" and its Llama site chart said the testing used \"Llama 4 Maverick optimized for conversationality.\" Researchers noticed the Arena version used lots of emojis and gave very long answers compared with the publicly downloadable model (TechCrunch, Apr 6 2025). So the thing that ranked wasn't quite the thing you could ship. 2. Selective disclosure skews the scores The paper \"The Leaderboard Illusion\" (Singh et al., Cohere Labs with Princeton, Stanford, MIT, AI2 and others, 2025) looked at Chatbot Arena and found: Undisclosed private testing lets a handful of providers test multiple variants before release and retract scores they don't like. Picking the best of many variants biases the published score. At the extreme, they identify 27 private LLM variants tested by Meta ahead of the Llama 4 release. Data access is uneven. Google and OpenAI received an estimated 19.2% and 20.4% of all Arena data, while 83 open-weight models combined received about 29.7%. Access to Arena data matters: even limited extra data gave relative gains of up to 112% on ArenaHard, a test set drawn from the Arena distribution. Their conclusion: these dynamics lead to overfitting to Arena-specific dynamics rather than general model quality (arXiv:2504.20879). To be fair, the authors also credit the organizers and the community for building a valuable platform, and they propose reforms. The point isn't \"Arena is bad.\" It's that a single public rank carries incentives you can't see. 3. Static benchmarks leak into training data Scale AI's GSM1k study (Zhang et al., 2024) built 1,000 new grade-school math problems that mirror GSM8k in difficulty and style. Several model families dropped up to 8% in accuracy on the fresh set, with signs of systematic overfitting across almost all sizes. They also found a positive relationship (Spearman's r\u00b2 = 0.36) between how likely a model was to generate GSM8k examples and its GSM8k-to-GSM1k gap, which suggests partial memorization (arXiv:2405.00332). The honest part: many frontier models showed minimal overfitting. So contamination doesn't make benchmarks worthless. It makes them unreliable at exactly the margins people argue about, a couple of points here or there. What I'd do instead Use leaderboards to shortlist, then let your own data decide: Pull 50-100 real requests from your logs (or realistic ones if you're pre-launch). Include the ugly ones: long inputs, ambiguous asks, edge cases that broke you before. Write down what \"good\" means for each: an expected answer, a required field, a must-not-say rule. Run every shortlisted model through the same prompt and settings. Score with checks first (exact match, schema validation, citations present), then a judge or human review for the rest. Look at cost and latency next to quality. A model that wins by 1% and costs 5x more probably loses. Keep the set private and add a case every time production surprises you. A private, growing eval set can't be gamed by someone else's launch strategy. The take A leaderboard tells you which model won someone else's test, under rules that providers can partly shape. Your users will run your test. Build it. What's your model selection process today: leaderboard, vibes, or your own eval set? References Singh et al., The Leaderboard Illusion (2025): https://arxiv.org/abs/2504.20879 Zhang et al., A Careful Examination of Large Language Model Performance on Grade School Arithmetic (GSM1k, 2024): https://arxiv.org/abs/2405.00332 TechCrunch, Meta's benchmarks for its new AI models are a bit misleading (Apr 6, 2025): https://techcrunch.com/2025/04/06/metas-benchmarks-for-its-new-ai-models-are-a-bit-misleading/",
+    "source_id": "devto",
+    "pubDate": "2026-11-25 04:20:45"
   },
   {
-    "title": "Oregon and Virginia Sue Elon Musk's SpaceX Under Consumer Protection Laws Over Grok AI 'Spicy Mode' Images",
-    "link": "https://www.ibtimes.co.uk/oregon-virginia-sue-spacex-grok-spicy-mode-images-1834435",
-    "description": "Oregon and Virginia have sued SpaceX over allegations that Grok's 'spicy mode' enabled users to create and share sexualised images of women and children without consent.",
-    "source_id": "ibtimes",
-    "pubDate": "2026-11-24 13:40:21"
+    "title": "Oyo Govs Aide Tasks Tech Developers to Deploy AI for Better Governance, Economic Inclusion",
+    "link": "https://www.latestnigeriannews.com/p/471697/oyo-govs-aide-tasks-tech-developers-to-deploy-ai-for-better-governance-economic-.html",
+    "description": "Kemi Olaitan in Ibadan Technology developers, innovators and digital entrepreneurs have been challenged to harness the transformative power of Artificial Intelligence (AI) to tackle governance challenges, promote economic inclusion and",
+    "source_id": "latestnigeriannews",
+    "pubDate": "2026-11-25 04:20:36"
   },
   {
-    "title": "US schools are moving away from AI in Google searches. Should Australia do the same?",
-    "link": "http://www.sydneysun.com/news/279452635/us-schools-are-moving-away-from-ai-in-google-searches-should-australia-do-the-same",
-    "description": "Share article Print article Three major school districts in the United States are contemplating moving away from Google search engines, so students are not forced to use artificial intelligence (AI) in their daily school work. The New Yo",
-    "source_id": "sydneysun",
-    "pubDate": "2026-11-24 13:40:04"
+    "title": "Global AI industry needs nearly $3 trillion in annual spending to justify infrastructure investments by 2029: JP Morgan",
+    "link": "https://economictimes.indiatimes.com/tech/artificial-intelligence/global-ai-industry-needs-nearly-usd-3-trillion-in-annual-spending-to-justify-infrastructure-investments-by-2029-jp-morgan/articleshow/136156282.cms",
+    "description": "By 2029, the worldwide artificial intelligence market is expected to necessitate nearly $3 trillion annually for its data center infrastructures. The cost to build one gigawatt of AI data center capacity amounts to around $ 40 billion. Annual contributions from businesses are projected at $ 2.5 trillion, with consumers likely contributing $750 billion.",
+    "source_id": "economictimes_indiatimes",
+    "pubDate": "2026-11-25 04:20:16"
   }
 ]
