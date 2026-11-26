@@ -1,37 +1,37 @@
 [
   {
-    "title": "Connecticut Police Are Using AI With Few Statewide Rules",
-    "link": "https://www.governing.com/artificial-intelligence/connecticut-police-are-using-ai-with-few-statewide-rules",
-    "description": "With limited statewide oversight and reporting requirements, local police departments are largely left to establish their own safeguards.",
-    "source_id": "governing",
-    "pubDate": "2026-11-25 13:15:40"
+    "title": "Nestle rolls out AI safety tech across entire truck fleet",
+    "link": "https://www.nst.com.my/business/corporate/2026/11/1586088/nestle-rolls-out-ai-safety-tech-across-entire-truck-fleet",
+    "description": "KUALA LANGAT: Nestle Malaysia Bhd has achieved 100 per cent GPS, artificial intelligence (AI)-enabled dashcam and telematics coverage across its existing transporter fleet in an effort to enhance visibility across its transport operations.",
+    "source_id": "nst",
+    "pubDate": "2026-11-26 03:56:49"
   },
   {
-    "title": "Investors Are 'Over' the AI Trade\u2014and the Stock Market Is in Trouble",
-    "link": "https://www.barrons.com/livecoverage/stock-market-news-today112526/card/investors-are-over-the-ai-trade-and-the-stock-market-is-in-trouble-C6U3363jjM03E8193A5g",
+    "title": "I built an AI career companion to solve my own job hunting frustrations \ud83d\ude80",
+    "link": "https://dev.to/debojyoti_chakraborty_037/i-built-an-ai-career-companion-to-solve-my-own-job-hunting-frustrations-3cig",
+    "description": "Job hunting today feels like a full-time job in itself. Between hopping across dozens of company career pages, digging through outdated listings, and scrambling to prepare for interviews, the process can get overwhelming really quickly. While looking for tech roles myself, I realized how fragmented this workflow was. I wanted a way to keep my job search and interview prep in one place without having 30 tabs constantly open. So, I built JOBLES (jobles.tech) \u2013 a free AI-powered career companion to bring some order to this chaos. Here\u2019s a quick breakdown of what I tried to solve: 1. Direct Company Career Page Aggregation \ud83d\udcc2 Usually, the freshest and most authentic roles are on the company's own site, but checking them manually is exhausting. JOBLES aggregates open roles directly from company career pages so you can catch genuine listings early. 2. AI Job Discovery \ud83d\udd0d To help you cut through the noise, you can describe what you're looking for, and JOBLES will help find roles that actually align with your skillset. No more browsing through endlessly generic, outdated boards. 3. Built-in AI Interview Prep \ud83d\udcac Finding the role is only half the battle. Once you get a bite, you can use JOBLES's integrated AI interview prep tool to practice responses and build confidence for the real thing. The Stack \ud83d\udcbb Since I wanted to move fast and keep it lightweight, I built the app using FastAPI (for a robust, speedy backend) paired with an AI/LLM orchestration layer, and designed a clean frontend using HTML, CSS, and JavaScript. Try it out! \ud83d\ude4c I\u2019m actively working on this side project and need honest feedback from developers, job seekers, and designers. Check it out at jobles.tech! What features should I add next? What feels clunky? Please roast my project or share your thoughts in the comments below! \ud83d\udc47",
+    "source_id": "devto",
+    "pubDate": "2026-11-26 03:55:32"
+  },
+  {
+    "title": "Hasna Cabral\u2019s daughter Basha asks public to stop making AI images of late mom",
+    "link": "https://entertainment.inquirer.net/691844/hasna-cabrals-daughter-basha-asks-public-to-stop-making-ai-images-of-late-mom",
+    "description": "Basha, the daughter of former \u201cPinoy Big Brother: Otso\u201d housemate Hasna Cabral, has appealed to social media users to stop creating AI-generated images featuring her late mother, saying the content makes her deeply uncomfortable. In a Facebook post on Wednesday, Nov. 25, Basha asked those who had created AI-generated thumbnails of the actress to remove them out of respect for their family. \u201cHey daughter of Hasna Cabral here. I do not like when people make AI thumbnails of my mom who passed away. I\u2019m very DEEPLY uncomfortable,\u201d she wrote. \u201cRespectfully, if you\u2019re one of these people who made AI thumbnails of [\u2026]... Keep on reading: Hasna Cabral\u2019s daughter Basha asks public to stop making AI images of late mom",
+    "source_id": "inquirer",
+    "pubDate": "2026-11-26 03:55:21"
+  },
+  {
+    "title": "Our AI models flagged six Indian winners this month \u2014 all up 20%+ in November",
+    "link": "https://in.investing.com/news/stock-market-news/our-ai-models-flagged-six-indian-winners-this-month--all-up-20-in-november-5726903",
     "description": null,
-    "source_id": "barrons",
-    "pubDate": "2026-11-25 13:15:11"
+    "source_id": "investing_in",
+    "pubDate": "2026-11-26 03:55:13"
   },
   {
-    "title": "IPS Academy Organises AICTE-Sponsored Six-Day Atal Faculty Development Programme on AI",
-    "link": "https://www.lokmattimes.com/business/ips-academy-organises-aicte-sponsored-six-day-atal-faculty-development-programme-on-ai-a001/",
-    "description": "IPS Academy Organises AICTE-Sponsored Six-Day Atal Faculty Development Programme on AI - Indore (Madhya Pradesh) [India], November 25: IPS Academy, Institute of Business Management and Research (IBMR), Sanwer, located on the ... - Latest News. Find Breaking Headlines, Current and Latest business news at Lokmattimes.com",
-    "source_id": "lokmattimes",
-    "pubDate": "2026-11-25 13:15:03"
-  },
-  {
-    "title": "Not SpaceX, Not Anthropic: These Are the 2 AI Stocks I Bought During the Sell-Off",
-    "link": "https://www.fool.com/investing/2026/11/25/not-spacex-not-anthropic-these-are-the-2-ai-stocks-i-bought-during-the-sell-off/",
-    "description": "The recent sell-off created opportunities across the AI sector. Instead of buying SpaceX or Anthropic, I invested in two highly profitable technology giants with powerful long-term growth opportunities.",
-    "source_id": "fool",
-    "pubDate": "2026-11-25 13:15:02"
-  },
-  {
-    "title": "AI Shifts Marketing Roles from Conversion Tests to Content Craft",
-    "link": "https://www.geeky-gadgets.com/ai-marketing-jobs-hiring-trends/",
-    "description": "AI software can take on marketing optimization, but employers still need people who can create content that earns an audience. Content producer, content creator and head of content lead the fastest-growing roles cited by the podcast Marketing Against the Grain, giving you a concrete signal about where demand is heading. Working with AI matters, but [\u2026] The post AI Shifts Marketing Roles from Conversion Tests to Content Craft appeared first on Geeky Gadgets.",
-    "source_id": "geeky_gadgets",
-    "pubDate": "2026-11-25 13:15:00"
+    "title": "Meridian buys stake in Datagrid's Southland AI hub",
+    "link": "https://itbrief.co.nz/story/meridian-buys-stake-in-datagrid-s-southland-ai-hub",
+    "description": "The deal gives Datagrid fresh backing for its 300MW Southland AI data centre, while tying Meridian closer to long-term electricity demand.",
+    "source_id": "itbrief_co_nz",
+    "pubDate": "2026-11-26 03:55:00"
   }
 ]
