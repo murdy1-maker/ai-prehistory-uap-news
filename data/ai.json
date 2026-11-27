@@ -1,37 +1,37 @@
 [
   {
-    "title": "Nestle rolls out AI safety tech across entire truck fleet",
-    "link": "https://www.nst.com.my/business/corporate/2026/11/1586088/nestle-rolls-out-ai-safety-tech-across-entire-truck-fleet",
-    "description": "KUALA LANGAT: Nestle Malaysia Bhd has achieved 100 per cent GPS, artificial intelligence (AI)-enabled dashcam and telematics coverage across its existing transporter fleet in an effort to enhance visibility across its transport operations.",
-    "source_id": "nst",
-    "pubDate": "2026-11-26 03:56:49"
+    "title": "Websites of 94 pc of select Indian brands fail AI readability test Report",
+    "link": "https://www.theweek.in/wire-updates/business/2026/11/26/websites-of-94-pc-of-select-indian-brands-fail-ai-readability-test-report.html",
+    "description": "New Delhi, Nov 26 (PTI) Websites of 94 pc of India\u2019s biggest brands covered in a survey can't be read",
+    "source_id": "theweek_in",
+    "pubDate": "2026-11-26 13:13:21"
   },
   {
-    "title": "I built an AI career companion to solve my own job hunting frustrations \ud83d\ude80",
-    "link": "https://dev.to/debojyoti_chakraborty_037/i-built-an-ai-career-companion-to-solve-my-own-job-hunting-frustrations-3cig",
-    "description": "Job hunting today feels like a full-time job in itself. Between hopping across dozens of company career pages, digging through outdated listings, and scrambling to prepare for interviews, the process can get overwhelming really quickly. While looking for tech roles myself, I realized how fragmented this workflow was. I wanted a way to keep my job search and interview prep in one place without having 30 tabs constantly open. So, I built JOBLES (jobles.tech) \u2013 a free AI-powered career companion to bring some order to this chaos. Here\u2019s a quick breakdown of what I tried to solve: 1. Direct Company Career Page Aggregation \ud83d\udcc2 Usually, the freshest and most authentic roles are on the company's own site, but checking them manually is exhausting. JOBLES aggregates open roles directly from company career pages so you can catch genuine listings early. 2. AI Job Discovery \ud83d\udd0d To help you cut through the noise, you can describe what you're looking for, and JOBLES will help find roles that actually align with your skillset. No more browsing through endlessly generic, outdated boards. 3. Built-in AI Interview Prep \ud83d\udcac Finding the role is only half the battle. Once you get a bite, you can use JOBLES's integrated AI interview prep tool to practice responses and build confidence for the real thing. The Stack \ud83d\udcbb Since I wanted to move fast and keep it lightweight, I built the app using FastAPI (for a robust, speedy backend) paired with an AI/LLM orchestration layer, and designed a clean frontend using HTML, CSS, and JavaScript. Try it out! \ud83d\ude4c I\u2019m actively working on this side project and need honest feedback from developers, job seekers, and designers. Check it out at jobles.tech! What features should I add next? What feels clunky? Please roast my project or share your thoughts in the comments below! \ud83d\udc47",
-    "source_id": "devto",
-    "pubDate": "2026-11-26 03:55:32"
+    "title": "John Deere launches AI assistant to analyse farm business data",
+    "link": "https://www.farmersguardian.com/news/4539599/john-deere-launches-ai-assistant-analyse-farm-business",
+    "description": "John Deere has launched JD, a new artificial intelligence assistant designed to help farmers analyse operational data and turn information from machinery and fieldwork into practical insights. Currently available free of charge through the John Deere Operations Center web and mobile applications, JD allows users to ask questions in everyday language rather than searching manually through different data sources. The assistant uses customer-authorised information from individual farming operations, including historical field, machine and workflow data, to provide context-specific answers. Functions include analysing past operational performance, reviewing equipment and land productivity, and assessing how decisions such as fertiliser rates, cultivation intensity and variable-rate applications have affected crop yields. READ NOW: Lunar rover? Or the future of vineyard crop protection at EIMA? JD can also help users navigate John Deere software and machinery by finding relevant information in operator manuals and support guides. John Deere says the technology is designed to reduce the time farmers spend searching for information, allowing them to identify opportunities to improve productivity, reduce costs and make more informed management decisions. Unlike general-purpose AI assistants, JD draws on data specific to the customer's operation rather than relying primarily on publicly available information. The manufacturer says all customer information remains within the Operations Center and is protected by the platform's existing security systems and permissions. Users retain control over their data and who it is shared with.",
+    "source_id": "farmersguardian",
+    "pubDate": "2026-11-26 13:12:00"
   },
   {
-    "title": "Hasna Cabral\u2019s daughter Basha asks public to stop making AI images of late mom",
-    "link": "https://entertainment.inquirer.net/691844/hasna-cabrals-daughter-basha-asks-public-to-stop-making-ai-images-of-late-mom",
-    "description": "Basha, the daughter of former \u201cPinoy Big Brother: Otso\u201d housemate Hasna Cabral, has appealed to social media users to stop creating AI-generated images featuring her late mother, saying the content makes her deeply uncomfortable. In a Facebook post on Wednesday, Nov. 25, Basha asked those who had created AI-generated thumbnails of the actress to remove them out of respect for their family. \u201cHey daughter of Hasna Cabral here. I do not like when people make AI thumbnails of my mom who passed away. I\u2019m very DEEPLY uncomfortable,\u201d she wrote. \u201cRespectfully, if you\u2019re one of these people who made AI thumbnails of [\u2026]... Keep on reading: Hasna Cabral\u2019s daughter Basha asks public to stop making AI images of late mom",
-    "source_id": "inquirer",
-    "pubDate": "2026-11-26 03:55:21"
+    "title": "\u2018AI slop\u2019 has infiltrated UK Christmas markets \u2013 and people have had enough",
+    "link": "https://www.independent.co.uk/news/uk/home-news/ai-slop-christmas-market-uk-kernow-manchester-b3091435.html",
+    "description": "Disgruntled guests have taken to social media to criticise the \u2018AI slop\u2019 imagery",
+    "source_id": "independentuk",
+    "pubDate": "2026-11-26 13:11:30"
   },
   {
-    "title": "Our AI models flagged six Indian winners this month \u2014 all up 20%+ in November",
-    "link": "https://in.investing.com/news/stock-market-news/our-ai-models-flagged-six-indian-winners-this-month--all-up-20-in-november-5726903",
-    "description": null,
-    "source_id": "investing_in",
-    "pubDate": "2026-11-26 03:55:13"
+    "title": "Here\u2019s Everything You Can Do With With the New Gemini AI on Android Auto",
+    "link": "https://us.headtopics.com/news/here-s-everything-you-can-do-with-with-the-new-gemini-ai-on-90208608",
+    "description": "Android Auto is now smarter than before, thanks to the addition of Gemini. You can navigate more easily and even bounce ideas off of it along the way.",
+    "source_id": "headtopics",
+    "pubDate": "2026-11-26 13:11:00"
   },
   {
-    "title": "Meridian buys stake in Datagrid's Southland AI hub",
-    "link": "https://itbrief.co.nz/story/meridian-buys-stake-in-datagrid-s-southland-ai-hub",
-    "description": "The deal gives Datagrid fresh backing for its 300MW Southland AI data centre, while tying Meridian closer to long-term electricity demand.",
-    "source_id": "itbrief_co_nz",
-    "pubDate": "2026-11-26 03:55:00"
+    "title": "\u2018AI slop\u2019 has infiltrated UK Christmas markets \u2013 and people have had enough - The Independent",
+    "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUFV1RllldzltQ20zc21uR0RRWGtVYTZhMVowanVBZjJiMWoyUjZBTUlWUUJoNU9tcWR6bjFWUk5wOU41RHRGZzRMNWJUNVBYVEJpUTFGbkxkTWxCNjROQjNpYW1IUTZYU1lsdGhieURBanVXTW8xTTYtQktBRURab2tkY3JsMkY3SVAteENpWm1ZeG9WWEgzOWdnenZhMzFsYlB5Q2dYQy1YODQ?oc=5",
+    "description": "\u2018AI slop\u2019 has infiltrated UK Christmas markets \u2013 and people have had enough The Independent Cornwall Christmas market cancels all bookings after AI backlash BBC Great markets \u2018reflect the people who use them\u2019 BBC Christmas cancelled after Cornwall market fails to live up to its AI posters The Times Christmas market organisers cancel all bookings and promise refunds after AI-generated posters failed to live up to reality of 'cold warehouse' LBC",
+    "source_id": "google",
+    "pubDate": "2026-11-26 13:11:00"
   }
 ]
